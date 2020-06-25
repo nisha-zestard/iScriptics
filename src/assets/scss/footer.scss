@@ -1,0 +1,99 @@
+.footer{
+    .footer-wrap{
+        border: 0;
+        padding: 45px 0;
+        background: #003c61;
+        .footer-col{
+            .footer-logo{
+                margin-bottom: 30px;
+            }
+            .footer-socials{
+                h5{
+                    color: $text;
+                    font-size: 16px;
+                    font-weight: 600;
+                    font-family: $open-sans-font;
+                    margin-bottom: 20px;
+                }
+                ul{
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    display: flex;
+                    li{
+                        a{
+                            margin-right: 15px;
+                            i{
+                                color: $text;
+                            }
+                        }
+                    }
+                }
+            }
+            .footer-title{
+                font-size: 20px;
+                font-weight: 900;
+                font-family: $open-sans-font;
+                color: $text;
+                margin-bottom: 20px;
+            }
+            .footer-links{
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                li{
+                    margin-bottom: 10px;
+                    a{
+                        font-size: 14px;
+                        font-family: $open-sans-font;
+                        color: $text;
+                        line-height: 18px;
+                    }
+                }
+            }
+            .subscribe-form-wraper{
+                h5{
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-family: $open-sans-font;
+                    color: $text;
+                    margin-bottom: 25px;
+                }
+                form{
+                    input{
+                        background: transparent;
+                        border: 0;
+                        border-bottom: 1px solid #fff;
+                        color: #bdbdbd;
+                        font-size: 12px;
+                        font-weight: 300;
+                        height: 30px;
+                        line-height: 30px;
+                        width: 100%;
+                        margin-bottom: 20px;
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                    .submit{
+                        font-size: 14px;
+                        font-weight: 600;
+                        background: #cc3333;
+                        border: 0;
+                        color: #fff;
+                        padding: 8px 45px;
+                    }
+                }
+            }
+        }
+    }
+    .copyright{
+        text-align: center;
+        font-size: 14px;
+        color: #000;
+        padding: 5px 0;
+        p{
+            margin: 0;
+        }
+    }
+}

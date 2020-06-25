@@ -1,0 +1,53 @@
+$primary-font: 'Khand', sans-serif; 
+$secondary-font: 'Montserrat', sans-serif;
+$open-sans-font: 'Open Sans', sans-serif;
+
+$text: #fff;
+.h2-heading{
+    font-family: $primary-font;
+    color: #fff;
+    font-size: 70px;
+    line-height: 77px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    span{
+        font-weight: 500;
+    }
+}
+.btn-primary{
+    color: $text;
+    border: 1px solid $text;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    background-color: transparent;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    padding: 12px 30px;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: $open-sans-font;
+    text-transform: uppercase;
+}
+body{
+    font-family: $open-sans-font;
+}
+.text-medium{
+    font-family: $secondary-font; 
+    font-size: 26px;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+@media (min-width: 1310px){
+    .container{
+        width: 1310px;
+    }
+}
+.home_promo_banner{
+    display: flex;
+    align-items: center;
+}
