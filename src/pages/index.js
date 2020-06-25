@@ -18,7 +18,7 @@ slide(y){
        this.slider.slickPrev()
     )
 }
-componentWillMount(){
+componentDidMount(){
     window.addEventListener('wheel', (e) => {
         this.slide(e.wheelDelta);
     })
