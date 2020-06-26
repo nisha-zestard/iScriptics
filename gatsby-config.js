@@ -50,17 +50,6 @@ module.exports = {
         },
       }
     },
-    {
-      resolve: "gatsby-source-graphql",
-      options: {
-        // Remote schema query type. This is an arbitrary name.
-        typeName: "WPGraphQL",
-        // Field name under which it will be available. Used in your Gatsby query. This is also an arbitrary name.
-        fieldName: "wpcontent",
-        // GraphQL endpoint, relative to your WordPress home URL.
-        url: "http://phptasks.com/iscriptics",
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
