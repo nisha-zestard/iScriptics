@@ -8,14 +8,21 @@ import {SectionsContainer, Section} from 'react-fullpage';
 class SecondPage extends Component {
   render() {
     let options = {
+      lockAnchors: false,
+      anchors:['firstPage', 'secondPage'],
+      navigation: true,
+      navigationPosition: 'right',
+      navigationTooltips: ['firstSlide', 'secondSlide'],
+      showActiveTooltip: true,
+      slidesNavigation: true,
+      slidesNavPosition: 'bottom',
       sectionClassName:     'section',
-      anchors:              ['sectionOne', 'sectionTwo', 'sectionThree'],
       scrollBar:            false,
-      navigation:           true,
+      navigationPosition:   'right',
       verticalAlign:        false,
       sectionPaddingTop:    '50px',
       sectionPaddingBottom: '50px',
-      arrowNavigation:      true
+      arrowNavigation:      false
     };
  
     return (
@@ -25,7 +32,6 @@ class SecondPage extends Component {
         <SectionsContainer className="container" {...options}>
           <Section className="custom-section" verticalAlign="true" color="#69D2E7">Page 1</Section>
           <Section color="#A7DBD8">Page 2</Section>
-          <Section color="#E0E4CC">Page 3</Section>
         </SectionsContainer>
       </div>
       </Layout>
