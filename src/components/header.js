@@ -44,20 +44,7 @@ const Header = () => {
  // const blog = data.allWordpressMenusMenusItems.nodes[0].items[5];
   // const getintouch = data.allWordpressMenusMenusItems.nodes[0].items[6];
   
-  // const openclosemenu = (el) => { 
-  //   const headm = document.getElementsByClassName('header-main')[0];   
-  //   headm.classList.toggle('menu-open');
-  //   const menubtn = document.getElementsByClassName('menu-btn')[0];
-  //   menubtn.classList.toggle('menu-btn_active');
-  //   const menunav = document.getElementsByClassName('menu-nav')[0];
-  //   menunav.classList.toggle('menu-nav_active');    
-  // }
-  // const ocmobilemenu = (el) => {
-  //   const hedmn = document.getElementsByClassName('header-main')[0];
-  //   hedmn.classList.toggle('menu-open');
-  //   const hmmenu = document.getElementsByClassName('mob-head-menu')[0];
-  //   hmmenu.classList.toggle('mob-menu-open');
-  // }
+ 
   
   return(
   <header>

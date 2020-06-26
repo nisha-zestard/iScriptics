@@ -25,9 +25,8 @@ componentDidMount(){
 }
   render(){
     const data = this.props.data;
-    const pagedetail = data.wordpressPage.acf.content_module_page;
-    console.log(pagedetail);
-    const idarray = ['', 'BPO', 'CRM/Erp', 'Gaming', 'Application Development', 'About us'];
+    const pagedetail = data.wordpressPage.acf.content_module_page;    
+    const idarray = ['BPO', 'BPO', 'CRM/Erp', 'Gaming', 'Application Development', 'About us'];
     var settings = {
       dots: true,
       infinite: false,
@@ -204,77 +203,7 @@ componentDidMount(){
           </div>          
           </Slider>
         </div>
-          </div>
-      
-      {/* <div className="footer">
-          <footer className="footer-wrap">
-              <article>
-                  <div className="container">
-                      <div className="row">
-                          <div className="col-md-3 col-sm-6">
-                              <div className="footer-col">
-                                  <div className="footer-logo">
-                                      <img src="assets/images/logo.png" />
-                                  </div>
-                                  <div className="footer-socials">
-                                      <h5>Connect with us</h5>
-                                      <ul>
-                                          <li><a href="javascript:;"><i className="fa fa-twitter"></i></a></li>
-                                          <li><a href="javascript:;"><i className="fa fa-facebook"></i></a></li>
-                                          <li><a href="javascript:;"><i className="fa fa-linkedin"></i></a></li>
-                                          <li><a href="javascript:;"><i className="fa fa-youtube"></i></a></li>
-                                      </ul>
-                                  </div>
-                              </div>
-                          </div>
-                          <div className="col-md-3 col-dm-6">
-                              <div className="footer-col">
-                                  <h2 className="footer-title">Company</h2>
-                                  <ul className="footer-links">
-                                      <li><a href="javascript:;">Know us</a></li>
-                                      <li><a href="javascript:;">Services</a></li>
-                                      <li><a href="javascript:;">Projects</a></li>
-                                      <li><a href="javascript:;">Careers</a></li>
-                                      <li><a href="javascript:;">Newsroom</a></li>
-                                  </ul>
-                              </div>
-                          </div>
-                          <div className="col-md-3 col-dm-6">
-                              <div className="footer-col">
-                                  <h2 className="footer-title">Support</h2>
-                                  <ul className="footer-links">
-                                      <li><a href="javascript:;">Terms of Use</a></li>
-                                      <li><a href="javascript:;">Privacy Statement</a></li>
-                                      <li><a href="javascript:;">Cookie Policy</a></li>
-                                      <li><a href="javascript:;">Safe Harbour Provision</a></li>
-                                      <li><a href="javascript:;">Trademarks</a></li>
-                                      <li><a href="javascript:;">Site Map</a></li>
-                                  </ul>
-                              </div>
-                          </div>
-                          <div className="col-md-3 col-dm-6">
-                              <div className="footer-col">
-                              <div className="subscribe-form-wraper">
-                                  <h5>Stay up to date on the latest from iScriptics</h5>
-                                  <form>
-                                      <input type="email" placeholder="Enter your E-mail address" name="email" />
-                                      <button className="submit">Sign up</button>
-                                  </form>
-                              </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </article>
-          </footer>
-          <div className="copyright">
-              <p>Copyright © 2020 iScriptics</p>
-          </div>
-          <a href="javascript:void(0)" className="scroll-up">
-              <img src="content/dam/infosys-web/en/global-resource/background-image/arrow_up.png" alt="Arrow up" className="img-responsive" />
-          </a>
-      </div> */}
-  
+          </div>      
     </Layout>
     ) 
   }
