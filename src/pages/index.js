@@ -44,7 +44,7 @@ componentDidMount(){
     return(
       <Layout>
         <SEO title="Home" />         
-        <div className="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+        <div className="Home-top-wraper">
           <div className="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
           <Slider ref={slider => this.slider = slider} {...settings}> 
             <div className="freeflowhtml aem-GridColumn aem-GridColumn--default--12">
