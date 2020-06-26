@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import './../assets/scss/index.scss'
 import SEO from "../components/seo"
 import Slider from "react-slick";
-import { removePre, removeSpecialSymbols } from './../util/common'
+import { removePre } from './../util/common'
 
 class Home extends Component {
   constructor(props){
@@ -33,7 +33,7 @@ componentDidMount(){
       slidesToShow: 1,
       slidesToScroll: 1,
       vertical: true,
-      speed: 1000,
+      speed: 2000,
       arrows: false,  
       customPaging: function (i) {
         return (
@@ -104,7 +104,7 @@ componentDidMount(){
                       <div className="col-md-6 col-xs-12">
                         <div className="image-wrap">
                           {pagedetail[2].cwi_image !== null &&
-                            <img src={pagedetail[2].cwi_image.source_url} />
+                            <img src={pagedetail[2].cwi_image.source_url} alt="Section right"/>
                           }
                         </div>
                       </div>
@@ -119,7 +119,7 @@ componentDidMount(){
                   <div className="col-md-6 col-xs-12">
                     <div className="image-wrap">
                       {pagedetail[3].cwi_image !== null &&
-                        <img src={pagedetail[3].cwi_image.source_url} />
+                        <img src={pagedetail[3].cwi_image.source_url} alt="Section left"/>
                       }
                     </div>
                   </div>
@@ -148,7 +148,7 @@ componentDidMount(){
                   <div className="col-md-6 col-xs-12">
                     <div className="image-wrap">
                       {pagedetail[4].cwi_image !== null &&
-                        <img src={pagedetail[4].cwi_image.source_url} />
+                        <img src={pagedetail[4].cwi_image.source_url} alt="Section right"/>
                       }
                     </div>
                   </div>
@@ -163,7 +163,7 @@ componentDidMount(){
                   <div className="col-md-6 col-xs-12">
                     <div className="image-wrap">
                       {pagedetail[5].cwi_image !== null &&
-                        <img src={pagedetail[5].cwi_image.source_url} />
+                        <img src={pagedetail[5].cwi_image.source_url} alt="Section left"/>
                       }
                     </div>
                   </div>
@@ -193,7 +193,7 @@ componentDidMount(){
                   <div className="col-md-6 col-xs-12">
                     <div className="image-wrap">
                       {pagedetail[6].cwi_image !== null &&
-                        <img src={pagedetail[6].cwi_image.source_url} />
+                        <img src={pagedetail[6].cwi_image.source_url} alt="Section left"/>
                       }
                     </div>
                   </div>

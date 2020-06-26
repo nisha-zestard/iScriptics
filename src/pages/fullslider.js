@@ -1,41 +1,17 @@
-import React, { Component } from "react"
+import React, { Component } from 'react';
+import { FullPage, Slide } from 'react-full-page';
 import { Link, graphql } from "gatsby"
 import { removePre } from './../util/common'
 import Layout from "../components/layout"
-// import SEO from "../components/seo"
-
-import {SectionsContainer, Section} from 'react-fullpage';
-class SecondPage extends Component {
+ 
+class FullPageExample extends Component {
   render() {
     const data = this.props.data;
     const pagedetail = data.wordpressPage.acf.content_module_page; 
-    var secondseStyle = 'backgroundImage: url("'+pagedetail[1].cwi_background_image.source_url +'") !important';
-    
-    let options = {
-      menu: '#menu',
-      lockAnchors: false,
-      anchors:['BPO', 'BPO', 'CRM/Erp', 'Gaming', 'Application', 'About'],
-      slideTooltips: ['BPO', 'BPO', 'CRM/Erp', 'Gaming', 'Application', 'About us'],
-      navigation: true,
-      navigationPosition: 'right',
-      navigationTooltips: ['BPO', 'BPO', 'CRM/Erp', 'Gaming', 'Application', 'About us'],
-      showActiveTooltip: true,
-      slidesNavigation: true,
-      slidesNavPosition: 'bottom',
-      sectionClassName:     'section',
-      scrollBar:            false,
-      verticalAlign:        false,
-      sectionPaddingTop:    '50px',
-      sectionPaddingBottom: '50px',
-      arrowNavigation:      true
-    };
-    console.log(options);
     return (
-      <Layout>
-        <div>        
-          <SectionsContainer className="container" {...options}>
-            <Section className="custom-section" verticalAlign="true" color="#003c61">
-              <article className="container">
+      <FullPage controls>
+        <Slide>
+        <article className="container">
                 <div className="row">
                   <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <div className="promo-align111">
@@ -50,9 +26,9 @@ class SecondPage extends Component {
                   </div>
                 </div>
               </article>
-            </Section>
-            <Section id="BPOsec">
-              <article className="container-fluid slider" >
+        </Slide>
+        <Slide>
+        <article className="container-fluid slider" >
                 <div className="row">                          
                   <div id="banner-carousel">
                     <div className="repeated-css industries-gradient">
@@ -74,9 +50,9 @@ class SecondPage extends Component {
                   </div>
                 </div>
               </article>
-            </Section>
-            <Section color="#6230bb">
-              <article className="container"> 
+        </Slide>
+        <Slide>
+        <article className="container"> 
                 <div className="row">
                   <div className="col-md-6 col-xs-12">
                       <h1 className="h2-heading mb-xs-10" dangerouslySetInnerHTML={{ __html: pagedetail[2].cwi_title }} />
@@ -92,9 +68,9 @@ class SecondPage extends Component {
                   </div>
                 </div> 
               </article> 
-            </Section>
-            <Section color="#f2a81e" id="section4">
-              <article className="container"> 
+        </Slide>
+        <Slide>
+        <article className="container"> 
                 <div className="row">
                   <div className="col-md-6 col-xs-12">
                     <div className="image-wrap">
@@ -112,9 +88,9 @@ class SecondPage extends Component {
                   </div>
                 </div> 
               </article> 
-            </Section>
-            <Section color="#009bd7">
-              <article className="container"> 
+        </Slide>
+        <Slide>
+        <article className="container"> 
                 <div className="row">
                   <div className="col-md-6 col-xs-12">
                     <div className="content left">
@@ -132,57 +108,13 @@ class SecondPage extends Component {
                   </div>
                 </div> 
               </article>
-            </Section>
-            <Section color="#e14a4a">
-              <article className="container"> 
-                <div className="row">
-                  <div className="col-md-6 col-xs-12">
-                    <div className="image-wrap">
-                      {pagedetail[5].cwi_image !== null &&
-                        <img src={pagedetail[5].cwi_image.source_url} alt="Section left"/>
-                      }
-                    </div>
-                  </div>
-                  <div className="col-md-6 col-xs-12">
-                    <div className="content right">
-                      <h1 className="h2-heading mb-xs-10" dangerouslySetInnerHTML={{ __html: pagedetail[5].cwi_title }} />
-                      <p className="text-medium" dangerouslySetInnerHTML={{ __html: pagedetail[5].cwi_sub_title }} />
-                      <Link to={`/${removePre(pagedetail[5].cwi_button_link)}`} className="btn-primary">{pagedetail[4].cwi_button_text}</Link>
-                    </div>
-                  </div>
-                </div> 
-              </article>
-            </Section>
-            <Section color="#fffff">
-              <article className="container"> 
-                <div className="row">
-                  <div className="col-md-6 col-xs-12">
-                    <div className="content left">
-                      <h1 className="h2-heading mb-xs-10" dangerouslySetInnerHTML={{ __html: pagedetail[6].cwi_title }} />
-                      <p className="text-medium" dangerouslySetInnerHTML={{ __html: pagedetail[6].cwi_sub_title }} />
-                      <p className="text-small" dangerouslySetInnerHTML={{ __html: pagedetail[6].cwi_content }} />
-                      <Link to={`/${removePre(pagedetail[6].cwi_button_link)}`} className="btn-primary">{pagedetail[4].cwi_button_text}</Link>
-                    </div>
-                  </div>
-                  <div className="col-md-6 col-xs-12">
-                    <div className="image-wrap">
-                      {pagedetail[6].cwi_image !== null &&
-                        <img src={pagedetail[6].cwi_image.source_url} alt="Section left"/>
-                      }
-                    </div>
-                  </div>
-                </div> 
-              </article> 
-            </Section>
-          </SectionsContainer>
-        </div>
-      </Layout>
-      
+        </Slide>
+      </FullPage>
     );
   }
-}
-export default SecondPage
+};
 
+export default FullPageExample
 
 export const query = graphql`
 {
