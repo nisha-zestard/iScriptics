@@ -951,6 +951,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.10.3":
+  version "7.10.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.3.tgz#670d002655a7c366540c67f6fd3342cd09500364"
+  integrity sha512-RzGO0RLSdokm9Ipe/YD+7ww8X2Ro79qiXZF3HU9ljrM+qnJmH1Vqth+hbiQZy761LnMJTMitHDuKVYTk3k4dLw==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/standalone@^7.10.2":
   version "7.10.2"
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.10.2.tgz#49dbbadcbc4b199df064d7d8b3e21c915b84abdb"
@@ -7330,6 +7337,21 @@ gatsby-source-graphql@^2.5.3:
     node-fetch "^1.7.3"
     uuid "^3.4.0"
 
+gatsby-source-graphql@^2.5.7:
+  version "2.5.7"
+  resolved "https://registry.yarnpkg.com/gatsby-source-graphql/-/gatsby-source-graphql-2.5.7.tgz#fc9c7aeb8a15ba7665d50542e7688b309572e9f4"
+  integrity sha512-pVJVflbZjxHfRgTm3h+aKMHaPeyVizt4St2eKsj6J4GxoeJ60Aab0EyRXqKFZJZSzF6eYTBApGAjZYHBSmZTXg==
+  dependencies:
+    "@babel/runtime" "^7.10.3"
+    apollo-link "1.2.14"
+    apollo-link-http "^1.5.17"
+    dataloader "^2.0.0"
+    graphql "^14.6.0"
+    graphql-tools "^5.0.0"
+    invariant "^2.2.4"
+    node-fetch "^1.7.3"
+    uuid "^3.4.0"
+
 gatsby-source-wordpress-menus@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/gatsby-source-wordpress-menus/-/gatsby-source-wordpress-menus-1.1.3.tgz#0885e7b8f3f1f7c7758c9a29bc601c01527b0f85"
@@ -12301,6 +12323,11 @@ react-focus-lock@^2.3.1:
     react-clientside-effect "^1.2.2"
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
+
+react-full-page@^0.1.9:
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/react-full-page/-/react-full-page-0.1.9.tgz#f1b1cfae8cd7fd8b9f93f55e224d9ed1db6ba6c3"
+  integrity sha512-hKb+SMbbZqSIVWeU+hhoz9AC/1XYDnpqyjIVGO6Y/HHA/gVqX6vNjMGF65k+3yWXykcAPZ8ASwCWkkMIgiKlYA==
 
 react-fullpage@^0.1.19:
   version "0.1.19"
