@@ -35,6 +35,7 @@ componentDidMount(){
       slidesToScroll: 1,
       vertical: true,
       speed: 1000,
+      arrows: false,  
       customPaging: function (i) {
         return (
         <a>{idarray[i]}</a>
