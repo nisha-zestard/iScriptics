@@ -1,8 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { useStaticQuery, Link, graphql } from "gatsby";
-
-// import Navbar from 'react-bootstrap/Navbar';
 import { removePre } from './../util/common';
 import Sitelogo from '../assets/images/logo.png';
 
