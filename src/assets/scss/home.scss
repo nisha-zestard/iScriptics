@@ -19,6 +19,7 @@
             margin-bottom: 50px;
         }
     }
+    
     .crp-erp-section{
         background: #6230bb;
     }
@@ -83,5 +84,48 @@
             }
         }
         
+    }
+}
+.Home-top-wraper{
+    .slick-slider{
+        .slick-list{
+            .slick-track{
+                .slick-slide{
+                    height: 100vh;
+                    div{
+                        height: 100%;
+                        .scroll-section, .promo-home-intro{
+                            height: 100%;
+                        }
+                        .sales-force-section{
+                            position: relative;
+                            #banner-carousel{
+                                .slide-image{
+                                    height: 100%;
+                                    min-height: 100%;
+                                    min-width: 100%;
+                                    position: absolute;
+                                    right: 0;
+                                    width: auto !important;
+                                    object-fit: cover;
+                                }
+                                .caption {
+                                    position: absolute;
+                                    left: 0;
+                                    right: 0;
+                                    top: 50%;
+                                    -webkit-transform: translate(0px, -30%) !important;
+                                    -moz-transform: translate(0px, -30%) !important;
+                                    -ms-transform: translate(0px, -30%) !important;
+                                    -o-transform: translate(0px, -30%) !important;
+                                    transform: translate(0px, -30%) !important;
+                                    width: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
