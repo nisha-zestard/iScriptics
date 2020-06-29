@@ -2,19 +2,29 @@ import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
 import { removePre } from './../util/common'
 import Layout from "../components/layout"
+import $ from 'jquery'
 // import SEO from "../components/seo"
 
 import {SectionsContainer, Section} from 'react-fullpage';
 class SecondPage extends Component {
+  componentDidMount() {    
+    var naglist = " ,BPO,CRM/Erp,Gaming,Application,Aboutus" ;
+    var Splitnaglist = naglist.split(",")
+    
+    $(".Navigation-Anchor").each(function(index){
+      console.log(index);
+      console.log(Splitnaglist[index]);
+      $(this).wrap( "<div class='slider-nav-with-text'></div>" );
+      $(this).after("<div class='navigation-text'>"+Splitnaglist[index]+"</div>");
+    });
+  }
   render() {
     const data = this.props.data;
     const pagedetail = data.wordpressPage.acf.content_module_page; 
-    var secondseStyle = 'backgroundImage: url("'+pagedetail[1].cwi_background_image.source_url +'") !important';
-    
     let options = {
       menu: '#menu',
       lockAnchors: false,
-      anchors:['BPO', 'BPO', 'CRM/Erp', 'Gaming', 'Application', 'About'],
+      anchors:['', 'BPO', 'CRM/Erp', 'Gaming', 'Application', 'About'],
       slideTooltips: ['BPO', 'BPO', 'CRM/Erp', 'Gaming', 'Application', 'About us'],
       navigation: true,
       navigationPosition: 'right',
@@ -29,7 +39,7 @@ class SecondPage extends Component {
       sectionPaddingBottom: '50px',
       arrowNavigation:      true
     };
-    console.log(options);
+    //console.log(options);
     return (
       <Layout>
         <div>        
