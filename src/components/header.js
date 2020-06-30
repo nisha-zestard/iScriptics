@@ -52,7 +52,7 @@ const Header = () => {
     <header>
     <nav className="navbar navbar-default navbar-fixed-top scrollbg-show" role="navigation">
         <div className="container mt45">
-           <div className="row align-items-center">
+           <div className="row align-items-center w-100">
                <div className="col-md-3">
             <div className="navbar-header page-scroll">
                     <a className="navbar-brand" href="#">
