@@ -66,9 +66,6 @@ class SecondPage extends Component {
                 <div className="row">                          
                   <div id="banner-carousel">
                     <div className="repeated-css industries-gradient">
-                      {/* {pagedetail[1].cwi_background_image !== null &&
-                        <img src={pagedetail[1].cwi_background_image.source_url} className="slide-image hidden-xs" alt="Being Resilient. That's Live Enterprise." />
-                      }                         */}
                       <div className="caption ">
                         <div className="container">
                             <div className="row">
