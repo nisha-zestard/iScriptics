@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 import { Link, graphql } from "gatsby";
+import './../assets/scss/index.scss'
 import { removePre } from './../util/common'
 import Layout from "../components/layout"
 
