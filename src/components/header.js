@@ -3,6 +3,8 @@ import React from "react"
 // import { useStaticQuery, Link, graphql } from "gatsby";
 // import { removePre } from './../util/common';
 import Sitelogo from '../assets/images/logo.png';
+import Searchbar from '../assets/images/search.png';
+import Menubar from '../assets/images/open-menu.png';
 
 const Header = () => {
 
@@ -47,9 +49,39 @@ const Header = () => {
  
   
   return(
-  <header>
-   <h1>Header</h1>
-  </header>
+    <header>
+    <nav className="navbar navbar-default navbar-fixed-top scrollbg-show" role="navigation">
+        <div className="container mt45">
+           <div className="row align-items-center">
+               <div className="col-md-3">
+            <div className="navbar-header page-scroll">
+                    <a className="navbar-brand" href="#">
+                        <img src={Sitelogo} /> 
+                    </a>
+                </div>
+                </div>
+                <div className="col-md-9 menu-right">
+                    <div className="header-menu hidden-tab">
+                        <ul className="nav navbar-nav navbar-right pos-right">
+                            <li> <a href="#" title="Careers">Careers</a> </li>
+                            <li> <a href="#" title="Investors">Investors</a> </li>
+                            <li> <a href="#" title="Navigate your next">Navigate your next</a> </li>
+                        </ul>
+                    </div> 
+                    <div className="search-bar">
+                        <img src={Searchbar} /> 
+                    </div> 
+                    <div className="hamburger-menu">
+                        <img src={Menubar} />
+                    </div> 
+                </div>
+            </div>         
+        </div>
+        <div className="progressbar">
+            <div className="width"></div>
+        </div>
+    </nav>
+</header>
   )
 }
 
