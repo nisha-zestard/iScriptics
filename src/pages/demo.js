@@ -2,22 +2,22 @@ import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
 import { removePre } from './../util/common'
 import Layout from "../components/layout"
-import $ from 'jquery'
+// import $ from 'jquery'
 // import SEO from "../components/seo"
 
 import {SectionsContainer, Section} from 'react-fullpage';
 class SecondPage extends Component {
-  componentDidMount() {    
-    var naglist = " ,BPO,CRM/Erp,Gaming,Application,Aboutus" ;
-    var Splitnaglist = naglist.split(",")
+  // componentDidMount() {    
+  //   var naglist = " ,BPO,CRM/Erp,Gaming,Application,Aboutus" ;
+  //   var Splitnaglist = naglist.split(",")
     
-    $(".Navigation-Anchor").each(function(index){
-      console.log(index);
-      console.log(Splitnaglist[index]);
-      $(this).wrap( "<div class='slider-nav-with-text'></div>" );
-      $(this).after("<div class='navigation-text'>"+Splitnaglist[index]+"</div>");
-    });
-  }
+  //   $(".Navigation-Anchor").each(function(index){
+  //     console.log(index);
+  //     console.log(Splitnaglist[index]);
+  //     $(this).wrap( "<div class='slider-nav-with-text'></div>" );
+  //     $(this).after("<div class='navigation-text'>"+Splitnaglist[index]+"</div>");
+  //   });
+  // }
   render() {
     const data = this.props.data;
     const pagedetail = data.wordpressPage.acf.content_module_page; 
