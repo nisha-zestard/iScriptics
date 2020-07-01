@@ -44,7 +44,7 @@ const Header = () => {
                     </a>
                 </div>
                 </div>
-                <div className="col-md-9 menu-right">
+                <div className="col-md-9 menu-right d-flex align-items-center">
                     <div className="header-menu">
                         <ul className="nav navbar-nav navbar-right pos-right">
                             {headermenu.map((node,index) => (

@@ -79,12 +79,12 @@ header{
                 width: 480px;
                 height: 100vh;
                 right: 0;
-                background: #d3d3d3;
+                background: #f1f1f1;
                 top: 0;
                 z-index: 99;
                 padding: 35px;
                 transition: all 0.5s;
-                display: none;
+                transform: translateX(530px);
                 .hm-menu{
                     .hm-menu-list{
                         list-style: none;
@@ -117,7 +117,7 @@ header{
             }
             &.show-main-menu{
                 .hbopen-menu{
-                    display: block;
+                    transform: translateX(0);
                 }
             }
         }
