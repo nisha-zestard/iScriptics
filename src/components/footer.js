@@ -1,8 +1,25 @@
 import PropTypes from "prop-types"
 import React from "react"
 import Sitelogo from '../assets/images/logo.png';
+import { useStaticQuery, Link, graphql } from "gatsby";
 
 const Footer = () => {
+    const data = useStaticQuery(graphql`
+    {
+        allWordpressMenusMenusItems {
+            nodes {
+                name
+                items {
+                title
+                url
+                }
+            }
+        }      
+    }
+  `)
+  const footercompany = data.allWordpressMenusMenusItems.nodes[2].items;
+  const footersupport = data.allWordpressMenusMenusItems.nodes[0].items;
+   console.log(footersupport);
   return(
     <footer className="footer">
         <div className="footer-wrap">
@@ -29,11 +46,9 @@ const Footer = () => {
                             <div className="footer-col">
                                 <h2 className="footer-title">Company</h2>
                                 <ul className="footer-links">
-                                    <li><a href="#">Know us</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Projects</a></li>
-                                    <li><a href="#">Careers</a></li>
-                                    <li><a href="#">Newsroom</a></li>
+                                    {footercompany.map((node,index) => (
+                                        <li key={index}><a href="#">{node.title}</a></li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
@@ -41,12 +56,9 @@ const Footer = () => {
                             <div className="footer-col">
                                 <h2 className="footer-title">Support</h2>
                                 <ul className="footer-links">
-                                    <li><a href="#">Terms of Use</a></li>
-                                    <li><a href="#">Privacy Statement</a></li>
-                                    <li><a href="#">Cookie Policy</a></li>
-                                    <li><a href="#">Safe Harbour Provision</a></li>
-                                    <li><a href="#">Trademarks</a></li>
-                                    <li><a href="#">Site Map</a></li>
+                                    {footersupport.map((node,index) => (
+                                        <li key={index}><a href="#">{node.title}</a></li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>

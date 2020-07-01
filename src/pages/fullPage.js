@@ -10,7 +10,7 @@ class Fullpage extends Component {
     render(){
         const data = this.props.data;
         const pagedetail = data.wordpressPage.acf.content_module_page; 
-        console.log(pagedetail);
+        //console.log(pagedetail);
         return(
             <Layout>
             <ReactFullpage
@@ -19,11 +19,11 @@ class Fullpage extends Component {
             scrollingSpeed = {1000}
             menu = {'#menu'}
               lockAnchors = {false}
-              anchors = {['', 'BPO', 'CRM/Erp', 'Gaming', 'Application', 'About']}
+              anchors = {['', 'BPO', 'CRM/Erp', 'Gaming', 'Cloud', 'Application', 'About']}
               navigation = {true}
               sectionsColor = {['#003c60', '', '#6230bb', '#f2a81e', '#009bd7', '#e14a4a', '#ffffff']}
               navigationPosition = {'right'}
-              navigationTooltips = {['BPO', 'BPO', 'CRM/Erp', 'Gaming', 'Cloud', 'Application Development', 'About us']}
+              navigationTooltips = {['', 'BPO', 'CRM/Erp', 'Gaming', 'Cloud', 'Application Development', 'About us']}
               showActiveTooltip = {true}
               slidesNavigation = {true}
               slidesNavPosition = {'bottom'}
@@ -79,7 +79,7 @@ class Fullpage extends Component {
                     </article>
                   </div>
 
-                  <div className="section">
+                  <div className="section" id="slide-crm-erp">
                     <article className="container"> 
                         <div className="row">
                             <div className="col-md-6 col-xs-12">
@@ -98,7 +98,7 @@ class Fullpage extends Component {
                     </article> 
                   </div>
 
-                  <div className="section">
+                  <div className="section" id="slide-gaming">
                     <article className="container"> 
                         <div className="row">
                             <div className="col-md-6 col-xs-12">
@@ -119,7 +119,7 @@ class Fullpage extends Component {
                     </article> 
                   </div>
 
-                  <div className="section">
+                  <div className="section" id="slide-cloud">
                     <article className="container"> 
                         <div className="row">
                             <div className="col-md-6 col-xs-12">
@@ -140,7 +140,7 @@ class Fullpage extends Component {
                     </article>
                   </div>
 
-                  <div className="section">
+                  <div className="section" id="slide-app-dev">
                     <article className="container"> 
                         <div className="row">
                             <div className="col-md-6 col-xs-12">
@@ -161,7 +161,7 @@ class Fullpage extends Component {
                     </article>
                   </div>
 
-                  <div className="section">
+                  <div className="section" id="slide-aboutus">
                     <article className="container"> 
                         <div className="row">
                             <div className="col-md-6 col-xs-12">
