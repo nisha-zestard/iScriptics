@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby";
 import './../assets/scss/index.scss'
 import { removePre } from './../util/common'
 import Layout from "../components/layout"
+import Footer from "../components/footer"
 
 class Fullpage extends Component {
     render(){
@@ -181,6 +182,11 @@ class Fullpage extends Component {
                         </div> 
                     </article> 
                   </div>
+
+                  <div className="section">
+                    <Footer />
+                  </div>
+                  
                 </ReactFullpage.Wrapper>
               );
             }}
