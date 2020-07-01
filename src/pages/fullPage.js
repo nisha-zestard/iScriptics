@@ -183,7 +183,7 @@ class Fullpage extends Component {
                     </article> 
                   </div>
 
-                  <div className="section">
+                  <div className="section" id="slider-footer">
                     <Footer />
                   </div>
                   
