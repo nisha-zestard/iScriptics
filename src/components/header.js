@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
-// import { useStaticQuery, Link, graphql } from "gatsby";
+import { useStaticQuery, Link, graphql } from "gatsby";
 // import { removePre } from './../util/common';
 import Sitelogo from '../assets/images/logo.png';
 import Searchbar from '../assets/images/search.png';
@@ -8,49 +8,33 @@ import Menubar from '../assets/images/open-menu.png';
 
 const Header = () => {
 
-  //   const data = useStaticQuery(graphql`
-  //   {
-  //       allWordpressMenusMenusItems {
-  //           nodes {
-  //               name
-  //               items {
-  //               title
-  //               url
-  //               }
-  //           }
-  //       }
-  //       allWordpressAcfOptions {
-  //           nodes {
-  //             options {        
-  //               header_logo {
-  //                 source_url
-  //               }
-  //               header_light_logo {
-  //                 source_url
-  //               }
-  //               header_right_link
-  //               header_right_link_text
-  //             }
-  //           }
-  //         }
-      
-  //   }
-  // `)
+    const data = useStaticQuery(graphql`
+    {
+        allWordpressMenusMenusItems {
+            nodes {
+                name
+                items {
+                title
+                url
+                }
+            }
+        }      
+    }
+  `)
   
-  // const headdata = data.allWordpressAcfOptions.nodes[0].options;
-  // const home = data.allWordpressMenusMenusItems.nodes[0].items[0];
-  // const aboutus = data.allWordpressMenusMenusItems.nodes[0].items[1];
-  // const services = data.allWordpressMenusMenusItems.nodes[0].items[2];
-  // const technology = data.allWordpressMenusMenusItems.nodes[0].items[3];
-  // const work = data.allWordpressMenusMenusItems.nodes[0].items[4];
- // const blog = data.allWordpressMenusMenusItems.nodes[0].items[5];
-  // const getintouch = data.allWordpressMenusMenusItems.nodes[0].items[6];
-  
+   const headermenu = data.allWordpressMenusMenusItems.nodes[1].items;
+   const mainmenu = data.allWordpressMenusMenusItems.nodes[2].items;
+   //console.log(headermenu);
+   const handleClicko = (el) => { 
+    const navbarmenu = document.getElementsByClassName('header-menu')[0];
+    navbarmenu.classList.toggle('show-main-menu');
+        console.log('Hi...');
+    }
  
   
   return(
     <header>
-    <nav className="navbar navbar-default navbar-fixed-top scrollbg-show" role="navigation">
+    <nav className="navbar navbar-default navbar-fixed-top scrollbg-show" role="navigation" id="head-nav">
         <div className="container mt45">
            <div className="row align-items-center w-100">
                <div className="col-md-3">
@@ -61,19 +45,43 @@ const Header = () => {
                 </div>
                 </div>
                 <div className="col-md-9 menu-right">
-                    <div className="header-menu hidden-tab">
+                    <div className="header-menu">
                         <ul className="nav navbar-nav navbar-right pos-right">
-                            <li> <a href="#" title="Careers">Careers</a> </li>
-                            <li> <a href="#" title="Investors">Investors</a> </li>
-                            <li> <a href="#" title="Navigate your next">Navigate your next</a> </li>
+                            {headermenu.map((node,index) => (
+                                <li key={index}> <a href="#" title={node.title}>{node.title}</a> </li>
+                            ))}
                         </ul>
+                        <div className="hbopen-menu">
+                            <div className="hm-logo">
+                                <a className="hm-logo-link" href="#">
+                                    <img src={Sitelogo} /> 
+                                </a>
+                            </div>
+                            <div className="hm-menu">
+                                <ul className="hm-menu-list">
+                                    {mainmenu.map((node,index) => (
+                                        <li key={index}> <a href="#" title={node.title}>{node.title}</a> </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="hm-social-media">
+                                <ul>
+                                    <li><a href="#"><i className="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i className="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i className="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i className="fa fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div> 
                     <div className="search-bar">
                         <img src={Searchbar} /> 
                     </div> 
-                    <div className="hamburger-menu">
-                        <img src={Menubar} />
-                    </div> 
+                    <button className="hamburger-menu" onClick={handleClicko}>
+                        <div className="bar1"></div>
+                        <div className="bar2"></div>
+                        <div className="bar3"></div>
+                    </button> 
                 </div>
             </div>         
         </div>
