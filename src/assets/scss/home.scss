@@ -99,6 +99,28 @@
         }
     }
 }
+.fullpage-wrapper{
+    #slide-aboutus{
+        .content{
+            .h2-heading {
+                font-size: 70px;
+                font-weight: 600;
+                color: #000;
+                font-family: $primary-font;
+                margin-bottom: 20px;
+            }
+            .text-medium{
+                color: #404040;
+                font-size: 20px;
+            }
+            .text-small{
+                font-size: 16px;
+                color: #8a8a8a;
+                line-height: 28px;
+            }
+        }
+    }
+}
 .slick-dots{
     transform: translateY(-50%);
     bottom: 50%;
@@ -137,34 +159,59 @@
 #BPOsec{
     background-size: cover;
 }
-#fp-nav{
-    &.fp-right{
-        right: inherit;
-        left: 17px;
-        ul{
-            li{
-                width: 60px;
-                height: 50px;
-                a{
-                    display: inline-block;
-                    span{
-                        width: 30px;
-                        height: 1px;
-                        border-radius: 0;
-                        background-color: #fff;
-                        transition: all .1s ease-in-out;
-                    }
-                    &.active, &:hover{
+body{
+    #fp-nav{
+        &.fp-right{
+            right: inherit;
+            left: 17px;
+            ul{
+                li{
+                    width: 200px;
+                    height: 50px;
+                    a{
+                        display: inline-block;
                         span{
-                            width: 60px;
+                            width: 30px;
+                            height: 1px;
                             border-radius: 0;
-                            height: 4px;
+                            background-color: #fff;
+                            transition: all .1s ease-in-out;
+                            left: 40px;
+                        }
+                        &.active, &:hover{
+                            span{
+                                width: 60px;
+                                border-radius: 0;
+                                height: 4px;
+                            }
                         }
                     }
+                    .fp-tooltip {
+                        right: inherit;
+                        left: 40px;
+                        top: 30px;
+                    }
                 }
-                .fp-tooltip {
-                    right: inherit;
-                    left: 20px;
+            }
+        }
+    }
+    &.fp-viewing-About, &.fp-viewing-7{
+        #fp-nav{
+            &.fp-right{
+                ul{
+                    li{
+                        a{
+                            span{
+                                background-color: #000;
+                            }
+                        }
+                        .fp-tooltip{
+                            color: #000;
+                        }
+                        &:last-child{
+                            display: none;
+                        }
+                    }
                 }
             }
         }
