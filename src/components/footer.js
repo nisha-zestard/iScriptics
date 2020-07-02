@@ -19,7 +19,7 @@ const Footer = () => {
   `)
   const footercompany = data.allWordpressMenusMenusItems.nodes[2].items;
   const footersupport = data.allWordpressMenusMenusItems.nodes[0].items;
-   console.log(footersupport);
+  // console.log(footersupport);
   return(
     <footer className="footer">
         <div className="footer-wrap">

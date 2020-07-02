@@ -7,6 +7,30 @@ import Layout from "../components/layout"
 import Footer from "../components/footer"
 
 class Fullpage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          isTop: true
+        };
+        this.onScroll = this.onScroll.bind(this);
+      }
+      componentDidMount() {    
+        document.addEventListener('scroll', () => { 
+            
+          const stickyhead = document.getElementsByClassName('site-header')[0];  
+          const isTop = window.scrollY ;
+              
+          if (isTop >= 100) { 
+            stickyhead.classList.add('sticky-header'); }
+          else { 
+            stickyhead.classList.remove('sticky-header');
+        
+        }
+        });
+      }
+      onScroll(isTop) {         
+            this.setState({ isTop });
+        }
     render(){
         const data = this.props.data;
         const pagedetail = data.wordpressPage.acf.content_module_page; 
@@ -16,9 +40,9 @@ class Fullpage extends Component {
             <ReactFullpage
     
             licenseKey = {'500A04D9-563743D5-BD1E20B3-42E7CDEA'}
-            scrollingSpeed = {1000}
+            scrollingSpeed = {700}
             menu = {'#menu'}
-              lockAnchors = {false}
+              lockAnchors = {true}
               anchors = {['', 'BPO', 'CRM/Erp', 'Gaming', 'Cloud', 'Application', 'About']}
               navigation = {true}
               sectionsColor = {['#003c60', '', '#6230bb', '#f2a81e', '#009bd7', '#e14a4a', '#ffffff']}
@@ -28,7 +52,10 @@ class Fullpage extends Component {
               slidesNavigation = {true}
               slidesNavPosition = {'bottom'}
               sectionClassName = {'section'}
-              scrollBar = {false}
+              css3 = {true}
+	          scrollingSpeed = {700}
+	          autoScrolling = {true}
+              scrollBar = {true}
               verticalAlign = {false}
               sectionPaddingTop = {'50px'}
               sectionPaddingBottom = {'50px'}
