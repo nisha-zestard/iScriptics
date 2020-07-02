@@ -30,7 +30,7 @@ const Header = () => {
  
   
     return(
-    <header>
+        <header className="site-header">
         <nav className="navbar" id="head-nav">
             <div className="container mt45">
                 <div className="row align-items-center w-100">
