@@ -32,6 +32,7 @@ const Header = () => {
     return(
 
     <header className="site-header">
+        <div className="container">
         <nav className="navbar" id="head-nav">
             <div className="container mt45">
                 <div className="row align-items-center w-100">
@@ -72,14 +73,16 @@ const Header = () => {
                                 </div>
                             </div>
                         </div> 
-                        <div className="search-bar">
-                            <img src={Searchbar} /> 
-                        </div> 
-                        <button className="hamburger-menu" onClick={handleClicko}>
-                            <div className="bar1"></div>
-                            <div className="bar2"></div>
-                            <div className="bar3"></div>
-                        </button> 
+                        <div className="header-right">
+                            <div className="search-bar">
+                                <img src={Searchbar} /> 
+                            </div> 
+                            <button className="hamburger-menu" onClick={handleClicko}>
+                                <div className="bar1"></div>
+                                <div className="bar2"></div>
+                                <div className="bar3"></div>
+                            </button> 
+                        </div>
                     </div>
                 </div>         
             </div>
@@ -87,6 +90,7 @@ const Header = () => {
                 <div className="width"></div>
             </div>
         </nav>
+        </div>
     </header>
     )
 }
