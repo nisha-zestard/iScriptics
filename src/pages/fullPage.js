@@ -58,7 +58,7 @@ class Fullpage extends Component {
                   </div>
 
                   <div className="section" id="BPOsec">
-                    <article className="container-fluid slider" >
+                    <article className="container slider" >
                         <div className="row">                          
                             <div id="banner-carousel">
                                 <div className="repeated-css industries-gradient">
@@ -100,7 +100,7 @@ class Fullpage extends Component {
 
                   <div className="section" id="slide-gaming">
                     <article className="container"> 
-                        <div className="row">
+                        <div className="row align-items-center">
                             <div className="col-md-6 col-xs-12">
                                 <div className="image-wrap">
                                 {pagedetail[3].cwi_image !== null &&

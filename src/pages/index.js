@@ -68,7 +68,7 @@ componentDidMount(){
             </div>
             <div className="freeflowhtml aem-GridColumn aem-GridColumn--default--12">
               <section id="BPO" className="sales-force-section scroll-section">
-                <article className="container-fluid slider">
+                <article className="container slider">
                   <div className="row">                          
                     <div id="banner-carousel">
                       <div className="repeated-css industries-gradient">
@@ -115,7 +115,7 @@ componentDidMount(){
           <div className="freeflowhtml aem-GridColumn aem-GridColumn--default--12">
             <section id="gaming" className="scroll-section relative home_promo_banner gaming-section"> 
               <article className="container"> 
-                <div className="row">
+                <div className="row align-items-center">
                   <div className="col-md-6 col-xs-12">
                     <div className="image-wrap">
                       {pagedetail[3].cwi_image !== null &&
