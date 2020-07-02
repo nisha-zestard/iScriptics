@@ -30,7 +30,8 @@ const Header = () => {
  
   
     return(
-        <header className="site-header">
+
+    <header className="site-header">
         <nav className="navbar" id="head-nav">
             <div className="container mt45">
                 <div className="row align-items-center w-100">
@@ -90,12 +91,5 @@ const Header = () => {
     )
 }
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

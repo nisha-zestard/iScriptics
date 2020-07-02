@@ -43,11 +43,11 @@ class Fullpage extends Component {
             scrollingSpeed = {700}
             menu = {'#menu'}
               lockAnchors = {true}
-              anchors = {['', 'BPO', 'CRM/Erp', 'Gaming', 'Cloud', 'Application', 'About']}
+              anchors = {['BPO', 'BPO', 'CRM/Erp', 'Gaming', 'Cloud', 'Application', 'About', '']}
               navigation = {true}
               sectionsColor = {['#003c60', '', '#6230bb', '#f2a81e', '#009bd7', '#e14a4a', '#ffffff']}
               navigationPosition = {'right'}
-              navigationTooltips = {['', 'BPO', 'CRM/Erp', 'Gaming', 'Cloud', 'Application Development', 'About us']}
+              navigationTooltips = {['BPO', 'BPO', 'CRM/Erp', 'Gaming', 'Cloud', 'Application Development', 'About us', '']}
               showActiveTooltip = {true}
               slidesNavigation = {true}
               slidesNavPosition = {'bottom'}
