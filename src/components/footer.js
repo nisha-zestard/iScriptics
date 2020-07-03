@@ -1,28 +1,51 @@
 import PropTypes from "prop-types"
 import React from "react"
 import Sitelogo from '../assets/images/logo.png';
-import { useStaticQuery, Link, graphql } from "gatsby";
-
-const Footer = () => {
-    const data = useStaticQuery(graphql`
-    {
-        allWordpressMenusMenusItems {
-            nodes {
-                name
-                items {
-                title
-                url
+import { useStaticQuery, graphql, StaticQuery } from "gatsby";
+import addToMailchimp from 'gatsby-plugin-mailchimp'
+class Footer extends React.Component {
+    // constructor() {
+    //     super()
+    //     this.state = { email: "", result: null }
+    //   }
+    //   _handleSubmit = async e => {
+    //     e.preventDefault()
+    //     const result = await addToMailchimp(this.state.email)
+    //     this.setState({result: result})
+    //   }
+    // handleChange = event => {
+    //     this.setState({ email: event.target.value })
+    //   }
+    render () {
+      const {
+        headernavclass,
+      } = this.props;
+      return (
+        <StaticQuery
+        query={graphql`
+          query {       
+            allWordpressMenusMenusItems {
+                nodes {
+                    name
+                    items {
+                    title
+                    url
+                    }
                 }
             }
-        }      
-    }
-  `)
-  const footercompany = data.allWordpressMenusMenusItems.nodes[2].items;
-  const footersupport = data.allWordpressMenusMenusItems.nodes[0].items;
-  // console.log(footersupport);
-  return(
-    <footer className="footer">
+          }
+        `}      
+        render={(data) => {
+            const footercompany = data.allWordpressMenusMenusItems.nodes[2].items;
+            const footersupport = data.allWordpressMenusMenusItems.nodes[0].items;
+               
+          return(
+            <footer className="footer">
+
         <div className="footer-wrap">
+        {/* <form onSubmit={this._handleSubmit(email, {listFields})}>
+    
+    </form> */}
             <article>
                 <div className="container">
                     <div className="row">
@@ -81,15 +104,12 @@ const Footer = () => {
             <p>Copyright © 2020 iScriptics</p>
         </div>
     </footer>
-  )
-}
-
-Footer.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Footer.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Footer
+          )  
+        }}
+      />
+      )
+    }
+  }
+  
+  export default Footer
+  
