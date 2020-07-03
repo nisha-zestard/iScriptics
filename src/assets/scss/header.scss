@@ -66,6 +66,23 @@
 }
 
 header{
+    &.site-header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        width: 100%;
+        padding-top: 10px;
+        &.sticky-header{
+            position: sticky;
+            width: 100%;
+            top: 0;
+            left: 0;
+            .header-menu, .navbar-brand{
+                display: none;
+            }
+        }
+    }
     .menu-right{
         .header-menu{
             .navbar-nav {
@@ -137,4 +154,13 @@ header{
     .fp-tableCell{
         height: auto !important;
     }
+}
+.header-right{
+    position: fixed;
+    right: 50px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    top: 16px;
+    z-index: 9999;
 }

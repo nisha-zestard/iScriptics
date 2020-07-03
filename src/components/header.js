@@ -14,6 +14,7 @@ class Header extends React.Component {
         };
         this.handleHover = this.handleHover.bind(this);
     }
+
     handleHover(){
         this.setState(prevState => ({
             isHovered: !prevState.isHovered
@@ -54,6 +55,9 @@ class Header extends React.Component {
                
           return(
             <header className="site-header">
+
+        <div className="container">
+
         <nav className="navbar" id="head-nav">
             <div className="container mt45">
                 <div className="row align-items-center w-100">
@@ -100,14 +104,18 @@ class Header extends React.Component {
                                 </div>
                             </div>
                         </div> 
-                        <div className="search-bar">
-                            <img src={Searchbar} /> 
-                        </div> 
-                        <button className="hamburger-menu" onClick={handleClicko} >
-                            <div className="bar1"></div>
-                            <div className="bar2"></div>
-                            <div className="bar3"></div>
-                        </button> 
+
+                        <div className="header-right">
+                            <div className="search-bar">
+                                <img src={Searchbar} /> 
+                            </div> 
+                            <button className="hamburger-menu" onClick={handleClicko}>
+                                <div className="bar1"></div>
+                                <div className="bar2"></div>
+                                <div className="bar3"></div>
+                            </button> 
+                        </div>
+
                     </div>
                 </div> 
                 <div className={"services-menu-list" + btnClass}>
@@ -131,6 +139,7 @@ class Header extends React.Component {
                 <div className="width"></div>
             </div>
         </nav>
+        </div>
     </header>
           )  
         }}
