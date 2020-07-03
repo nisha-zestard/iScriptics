@@ -44,10 +44,10 @@ class Header extends React.Component {
           }
         `}      
         render={(data) => {
-            const headermenu = data.allWordpressMenusMenusItems.edges[1].node.items;
-            const mainmenu = data.allWordpressMenusMenusItems.edges[2].node.items;
-            const servicesmenu = data.allWordpressMenusMenusItems.edges[3].node;
-            console.log(servicesmenu);
+            const headermenu = data.allWordpressMenusMenusItems.edges[2].node.items;
+            const mainmenu = data.allWordpressMenusMenusItems.edges[3].node.items;
+            const servicesmenu = data.allWordpressMenusMenusItems.edges[0].node;
+            console.log(data);
             const handleClicko = (el) => { 
                 const navbarmenu = document.getElementsByClassName('header-menu')[0];
                 navbarmenu.classList.toggle('show-main-menu');    
@@ -84,7 +84,7 @@ class Header extends React.Component {
                                 <div className="hm-menu">
                                     <ul className="hm-menu-list">
                                     <li > <a href="#" title={mainmenu[0].title}>{mainmenu[0].title}</a> </li>
-                                    <li onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}> <a href="#" title={mainmenu[1].title}>{mainmenu[1].title}</a> </li>
+                                    <li > <a href="#" title={mainmenu[1].title} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>{mainmenu[1].title}</a> </li>
                                     <li > <a href="#" title={mainmenu[2].title}>{mainmenu[2].title}</a> </li>
                                     <li > <a href="#" title={mainmenu[3].title}>{mainmenu[3].title}</a> </li>
                                     <li > <a href="#" title={mainmenu[4].title}>{mainmenu[4].title}</a> </li>
