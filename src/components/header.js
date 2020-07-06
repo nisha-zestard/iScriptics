@@ -3,6 +3,7 @@ import React from "react"
 import { useStaticQuery, graphql, StaticQuery } from "gatsby";
 import Sitelogo from '../assets/images/logo.png';
 import Searchbar from '../assets/images/search.png';
+import Menuback from '../assets/images/menu.png';
 
 
 
@@ -74,8 +75,8 @@ class Header extends React.Component {
                                 {headermenu.map((node,hmi) => (
                                     <li key={hmi}> <a href="#" title={node.title}>{node.title}</a> </li>
                                 ))}
-                            </ul>
-                            <div className="hbopen-menu">
+                            </ul>                            
+                            <div className="hbopen-menu" style={{backgroundImage: `url(${Menuback})`}}>
                                 <div className="hm-logo">
                                     <a className="hm-logo-link" href="#">
                                         <img src={Sitelogo} /> 
