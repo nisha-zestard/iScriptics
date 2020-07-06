@@ -118,13 +118,13 @@ class Header extends React.Component {
 
                     </div>
                 </div> 
-                <div className={"services-menu-list" + btnClass}>
-                    <h1>{servicesmenu.name}</h1>
-                    <ul>
+                <div className={"services-menu-list " + btnClass}>
+                    <h1 className="title">{servicesmenu.name}</h1>
+                    <ul className="first-level-menu">
                         {servicesmenu.items.map((node,index) => (
                             <li key={index}><a href="#">{node.title}</a>
                             {node.child_items !== null &&
-                                <ul>
+                                <ul className="second-level-menu">
                                     {node.child_items.map((subnode, ssmi) => (
                                         <li key={ssmi}><a href="#">{subnode.title}</a></li>
                                     ))}

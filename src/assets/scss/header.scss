@@ -99,12 +99,17 @@ header{
                 width: 480px;
                 height: 100vh;
                 right: 0;
-                background: #f1f1f1;
+                // background: url('../assets/images/menu.png');
+                background: #fff;
                 top: 0;
                 z-index: 99;
                 padding: 35px;
                 transition: all 0.5s;
                 transform: translateX(530px);
+                @media screen and (max-width: 991px){
+                    width: 100%;
+                    transform: translateX(2000px);
+                }
                 .hm-menu{
                     .hm-menu-list{
                         list-style: none;
@@ -148,6 +153,76 @@ header{
             }
         }
     }
+    .services-menu-list{
+        position: fixed;
+        left: 0;
+        background: #fff;
+        width: calc(100% - 480px);
+        top: 0;
+        height: 100vh;
+        padding: 35px 15px;
+        display: block;
+        transition: all 0.6s;
+        transform: translateX(-2000px);
+        overflow-y: auto;
+        @media screen and (max-width: 991px){
+            width: 100%;
+            z-index: 9999;
+        }
+        &.show-slide-menu{
+            transform: translateX(0);
+        }
+        .title{
+            font-size: 36px;
+            color: #000;
+            margin-bottom: 35px;
+            font-family: $primary-font;
+        }
+        .first-level-menu{
+            list-style: none;
+            margin: 0;
+            li{
+                display: flex;
+                margin: 0 0 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #e2e2e2;
+                @media screen and (max-width: 767px){
+                    flex-wrap: wrap;
+                }
+                a{
+                    font-size: 16px;
+                    color: #000;
+                    font-weight: bold;
+                    width: 340px;
+                    @media screen and (max-width: 767px){
+                        width: 100%;
+                    }
+                }
+                .second-level-menu{
+                    margin: 0;
+                    width: calc(100% - 340px);
+                    column-count: 3;
+                    @media screen and (max-width: 991px){
+                        column-count: 2;
+                    }
+                    @media screen and (max-width: 767px){
+                        column-count: 1;
+                        width: 100%;
+                    }
+                    li{
+                        margin-bottom: 15px;
+                        padding: 0;
+                        border: 0;
+                        a{
+                            font-size: 14px;
+                            color: #4b4b4b;
+                            font-weight: normal;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 #slider-footer{
     height: auto !important;
@@ -163,4 +238,18 @@ header{
     align-items: center;
     top: 16px;
     z-index: 9999;
+}
+@keyframes fadeInLeftBig{
+	0%{
+	opacity:0;
+	-webkit-transform:translateX(-2000px);
+	-ms-transform:translateX(-2000px);
+	transform:translateX(-2000px)
+	}
+	100%{
+	opacity:1;
+	-webkit-transform:translateX(0);
+	-ms-transform:translateX(0);
+	transform:translateX(0)
+	}
 }
