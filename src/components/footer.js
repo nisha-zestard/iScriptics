@@ -110,6 +110,12 @@ class Footer extends React.Component {
       )
     }
   }
+  Footer.propTypes = {
+    siteTitle: PropTypes.string,
+  }
   
+  Footer.defaultProps = {
+    siteTitle: ``,
+  }
   export default Footer
   
