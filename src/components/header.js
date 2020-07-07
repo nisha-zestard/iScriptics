@@ -79,11 +79,6 @@ class Header extends React.Component {
                                 <div className="hm-logo">
                                 <Link to="/" className="hm-logo-link"><img src={Sitelogo} alt="Open menu logo"/> </Link>
                                 </div>
-                                <div className="hm-close-menu">
-                                    <button className="hamburger-close" onClick={handleClicko} >
-                                        <img src={Hmclosemenu} alt="Hm close menu" />
-                                    </button>                                    
-                                </div>
                                 <div className="hm-menu">
                                     <ul className="hm-menu-list">
                                         <li ><Link to={`/${removePre(mainmenu[0].url)}`} >{mainmenu[0].title}</Link> </li>
@@ -119,7 +114,11 @@ class Header extends React.Component {
                     </div>
                 </div> 
                 <div className={"services-menu-list " + btnClass} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
-
+                    <div className="hm-close-menu">
+                        <button className="hamburger-close" onClick={handleClicko} >
+                            <img src={Hmclosemenu} alt="Hm close menu" />
+                        </button>                                    
+                    </div>
                     <h1 className="title">{servicesmenu.name}</h1>
                     <ul className="first-level-menu">
                         {servicesmenu.items.map((node,index) => (
