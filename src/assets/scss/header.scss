@@ -166,6 +166,18 @@ header{
         transition: all 0.6s;
         transform: translateX(-2000px);
         overflow-y: auto;
+        .hm-close-menu{
+            position: absolute;
+            right: 15px;
+            top: 20px;
+            .hamburger-close{
+                background: transparent;
+                border: 0;
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
         @media screen and (max-width: 991px){
             width: 100%;
             z-index: 9999;
