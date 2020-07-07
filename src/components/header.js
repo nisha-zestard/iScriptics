@@ -119,7 +119,8 @@ class Header extends React.Component {
                     </div>
                 </div> 
                 <div className={"services-menu-list " + btnClass} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
-                    <h1 className="title">{servicesmenu.name}</h1>                    
+
+                    <h1 className="title">{servicesmenu.name}</h1>
                     <ul className="first-level-menu">
                         {servicesmenu.items.map((node,index) => (
                             <li key={index}><Link to={`/${removePre(node.url)}`}>{node.title}</Link>
