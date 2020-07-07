@@ -77,7 +77,17 @@ class Header extends React.Component {
                                 {headermenu.map((node,hmi) => (
                                     <li key={hmi}><Link to={`/${removePre(node.url)}`} >{node.title}</Link></li>                                    
                                 ))}
-                            </ul>                            
+                            </ul> 
+                            <div className="header-right">
+                            <div className="search-bar">
+                                <img src={Searchbar} alt="Header searchbar"/> 
+                            </div> 
+                            <button className="hamburger-menu" onClick={handleClicko}>
+                                <div className="bar1"></div>
+                                <div className="bar2"></div>
+                                <div className="bar3"></div>
+                            </button> 
+                        </div>                           
                             <div className="hbopen-menu" style={{backgroundImage: `url(${Menuback})`}}>
                                 <div className="hm-logo">
                                 <Link to="/" className="hm-logo-link"><img src={Sitelogo} alt="Open menu logo"/> </Link>
@@ -102,18 +112,6 @@ class Header extends React.Component {
                                 </div>
                             </div>
                         </div> 
-
-                        <div className="header-right">
-                            <div className="search-bar">
-                                <img src={Searchbar} alt="Header searchbar"/> 
-                            </div> 
-                            <button className="hamburger-menu" onClick={handleClicko}>
-                                <div className="bar1"></div>
-                                <div className="bar2"></div>
-                                <div className="bar3"></div>
-                            </button> 
-                        </div>
-
                     </div>
                 </div> 
                 <div className={"services-menu-list " + btnClass} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
