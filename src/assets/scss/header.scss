@@ -66,6 +66,9 @@
     justify-content: flex-end;
     .header-menu{
         margin-right: 25px;
+        @media screen and (max-width: 1300px){
+            margin-right: 80px;
+        }
     }
     .search-bar{
         margin-right: 25px;
