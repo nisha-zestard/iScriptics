@@ -82,7 +82,7 @@ class Header extends React.Component {
                                 <div className="hm-menu">
                                     <ul className="hm-menu-list">
                                         <li ><Link to={`/${removePre(mainmenu[0].url)}`} >{mainmenu[0].title}</Link> </li>
-                                        <li ><Link to={`/${removePre(mainmenu[1].url)}`} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>{mainmenu[1].title}</Link> </li>
+                                        <li ><a href={`/${removePre(mainmenu[1].url)}`} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>{mainmenu[1].title}</a> </li>
                                         <li ><Link to={`/${removePre(mainmenu[2].url)}`} >{mainmenu[2].title}</Link> </li>
                                         <li ><Link to={`/${removePre(mainmenu[3].url)}`} >{mainmenu[3].title}</Link> </li>
                                         <li ><Link to={`/${removePre(mainmenu[4].url)}`} >{mainmenu[4].title}</Link> </li>
