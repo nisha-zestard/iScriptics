@@ -52,8 +52,11 @@ class Header extends React.Component {
             const handleClicko = (el) => { 
                 const navbarmenu = document.getElementsByClassName('header-menu')[0];
                 navbarmenu.classList.toggle('show-main-menu'); 
-            }
-            
+            }      
+            const Closeservicemenu = (el) => { 
+                const navbarmenu = document.getElementsByClassName('services-menu-list')[0];
+                navbarmenu.classList.toggle('show-slide-menu'); 
+            }      
                
           return(
             <header className="site-header">
@@ -115,7 +118,7 @@ class Header extends React.Component {
                 </div> 
                 <div className={"services-menu-list " + btnClass} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
                     <div className="hm-close-menu">
-                        <button className="hamburger-close" onClick={handleClicko} >
+                        <button className="hamburger-close" onClick={Closeservicemenu} >
                             <img src={Hmclosemenu} alt="Hm close menu" />
                         </button>                                    
                     </div>
