@@ -47,8 +47,8 @@ class Header extends React.Component {
         render={(data) => {
             const headermenu = data.allWordpressMenusMenusItems.edges[1].node.items;
             const mainmenu = data.allWordpressMenusMenusItems.edges[2].node.items;
-            const servicesmenu = data.allWordpressMenusMenusItems.edges[0].node;
-            //console.log(data);
+            const servicesmenu = data.allWordpressMenusMenusItems.edges[3].node;
+            
             const handleClicko = (el) => { 
                 const navbarmenu = document.getElementsByClassName('header-menu')[0];
                 navbarmenu.classList.toggle('show-main-menu'); 
@@ -62,7 +62,6 @@ class Header extends React.Component {
             <header className="site-header">
 
         <div className="container">
-
         <nav className="navbar" id="head-nav">
             <div className="container mt45">
                 <div className="row align-items-center w-100">

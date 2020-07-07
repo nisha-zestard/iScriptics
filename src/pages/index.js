@@ -36,8 +36,7 @@ class Fullpage extends Component {
         const pagedetail = data.wordpressPage.acf.content_module_page;         
         return(
             <Layout>
-            <ReactFullpage
-    
+            <ReactFullpage    
             licenseKey = {'500A04D9-563743D5-BD1E20B3-42E7CDEA'}
             scrollingSpeed = {700}
             menu = {'#menu'}
