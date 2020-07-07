@@ -1,11 +1,10 @@
 import PropTypes from "react"
 import React from "react"
-import { useStaticQuery, graphql, StaticQuery } from "gatsby";
+import { graphql, Link, StaticQuery } from "gatsby";
+import { removePre } from './../util/common';
 import Sitelogo from '../assets/images/logo.png';
 import Searchbar from '../assets/images/search.png';
 import Menuback from '../assets/images/menu.png';
-
-
 
 class Header extends React.Component {
     constructor(){
@@ -64,41 +63,38 @@ class Header extends React.Component {
                 <div className="row align-items-center w-100">
                     <div className="col-md-3">
                 <div className="navbar-header">
-                        <a className="navbar-brand" href="#">
-                            <img src={Sitelogo} alt="Main logo"/> 
-                        </a>
+                    <Link to="/"><img src={Sitelogo} alt="Main logo"/> </Link>
                     </div>
                     </div>
                     <div className="col-md-9 menu-right d-flex align-items-center">
                         <div className="header-menu">
                             <ul className="nav navbar-nav navbar-right pos-right">
                                 {headermenu.map((node,hmi) => (
-                                    <li key={hmi}> <a href="#" title={node.title}>{node.title}</a> </li>
+                                    <li key={hmi}><Link to={`/${removePre(node.url)}`} >{node.title}</Link></li>
+                                    
                                 ))}
                             </ul>                            
                             <div className="hbopen-menu" style={{backgroundImage: `url(${Menuback})`}}>
                                 <div className="hm-logo">
-                                    <a className="hm-logo-link" href="#">
-                                        <img src={Sitelogo} /> 
-                                    </a>
+                                <Link to="/" className="hm-logo-link"><img src={Sitelogo} alt="Open menu logo"/> </Link>
                                 </div>
                                 
                                 <div className="hm-menu">
                                     <ul className="hm-menu-list">
-                                        <li > <a href="#" title={mainmenu[0].title}>{mainmenu[0].title}</a> </li>
-                                        <li > <a href="#" title={mainmenu[1].title} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>{mainmenu[1].title}</a> </li>
-                                        <li > <a href="#" title={mainmenu[2].title}>{mainmenu[2].title}</a> </li>
-                                        <li > <a href="#" title={mainmenu[3].title}>{mainmenu[3].title}</a> </li>
-                                        <li > <a href="#" title={mainmenu[4].title}>{mainmenu[4].title}</a> </li>
-                                        <li > <a href="#" title={mainmenu[5].title}>{mainmenu[5].title}</a> </li>                                       
+                                        <li ><Link to={`/${removePre(mainmenu[0].url)}`} >{mainmenu[0].title}</Link> </li>
+                                        <li ><Link to={`/${removePre(mainmenu[1].url)}`} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>{mainmenu[1].title}</Link> </li>
+                                        <li ><Link to={`/${removePre(mainmenu[2].url)}`} >{mainmenu[2].title}</Link> </li>
+                                        <li ><Link to={`/${removePre(mainmenu[3].url)}`} >{mainmenu[3].title}</Link> </li>
+                                        <li ><Link to={`/${removePre(mainmenu[4].url)}`} >{mainmenu[4].title}</Link> </li>
+                                        <li ><Link to={`/${removePre(mainmenu[5].url)}`} >{mainmenu[5].title}</Link> </li>
                                     </ul>
                                 </div>
                                 <div className="hm-social-media">
                                     <ul>
-                                        <li><a href="#"><i className="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-youtube"></i></a></li>
+                                        <li><Link to="#"><i className="fa fa-twitter"></i></Link></li>
+                                        <li><Link to="#"><i className="fa fa-facebook"></i></Link></li>
+                                        <li><Link to="#"><i className="fa fa-linkedin"></i></Link></li>
+                                        <li><Link to="#"><i className="fa fa-youtube"></i></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -106,7 +102,7 @@ class Header extends React.Component {
 
                         <div className="header-right">
                             <div className="search-bar">
-                                <img src={Searchbar} /> 
+                                <img src={Searchbar} alt="Header searchbar"/> 
                             </div> 
                             <button className="hamburger-menu" onClick={handleClicko}>
                                 <div className="bar1"></div>
@@ -121,11 +117,11 @@ class Header extends React.Component {
                     <h1 className="title">{servicesmenu.name}</h1>
                     <ul className="first-level-menu">
                         {servicesmenu.items.map((node,index) => (
-                            <li key={index}><a href="#">{node.title}</a>
+                            <li key={index}><Link to={`/${removePre(node.url)}`}>{node.title}</Link>
                             {node.child_items !== null &&
                                 <ul className="second-level-menu">
                                     {node.child_items.map((subnode, ssmi) => (
-                                        <li key={ssmi}><a href="#">{subnode.title}</a></li>
+                                        <li key={ssmi}><Link to={`/${removePre(subnode.url)}`}>{subnode.title}</Link></li>
                                     ))}
                                 </ul>
                             }
