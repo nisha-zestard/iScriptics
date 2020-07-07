@@ -1,8 +1,10 @@
 import PropTypes from "prop-types"
 import React from "react"
+import { removePre } from './../util/common';
 import Sitelogo from '../assets/images/logo.png';
-import { useStaticQuery, graphql, StaticQuery } from "gatsby";
-import addToMailchimp from 'gatsby-plugin-mailchimp'
+import { graphql, Link, StaticQuery } from "gatsby";
+// import addToMailchimp from 'gatsby-plugin-mailchimp'
+
 class Footer extends React.Component {
     // constructor() {
     //     super()
@@ -17,9 +19,7 @@ class Footer extends React.Component {
     //     this.setState({ email: event.target.value })
     //   }
     render () {
-      const {
-        headernavclass,
-      } = this.props;
+      
       return (
         <StaticQuery
         query={graphql`
@@ -43,9 +43,7 @@ class Footer extends React.Component {
             <footer className="footer">
 
         <div className="footer-wrap">
-        {/* <form onSubmit={this._handleSubmit(email, {listFields})}>
-    
-    </form> */}
+      
             <article>
                 <div className="container">
                     <div className="row">
@@ -57,10 +55,10 @@ class Footer extends React.Component {
                                 <div className="footer-socials">
                                     <h5>Connect with us</h5>
                                     <ul>
-                                        <li><a href="#"><i className="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-youtube"></i></a></li>
+                                        <li><Link to="#"><i className="fa fa-twitter"></i></Link></li>
+                                        <li><Link to="#"><i className="fa fa-facebook"></i></Link></li>
+                                        <li><Link to="#"><i className="fa fa-linkedin"></i></Link></li>
+                                        <li><Link to="#"><i className="fa fa-youtube"></i></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -70,7 +68,7 @@ class Footer extends React.Component {
                                 <h2 className="footer-title">Company</h2>
                                 <ul className="footer-links">
                                     {footercompany.map((node,index) => (
-                                        <li key={index}><a href="#">{node.title}</a></li>
+                                        <li key={index}><Link to={`/${removePre(node.url)}`}>{node.title}</Link></li>
                                     ))}
                                 </ul>
                             </div>
@@ -80,7 +78,7 @@ class Footer extends React.Component {
                                 <h2 className="footer-title">Support</h2>
                                 <ul className="footer-links">
                                     {footersupport.map((node,index) => (
-                                        <li key={index}><a href="#">{node.title}</a></li>
+                                        <li key={index}><Link to={`/${removePre(node.url)}`}>{node.title}</Link></li>
                                     ))}
                                 </ul>
                             </div>
