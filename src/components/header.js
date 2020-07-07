@@ -1,4 +1,4 @@
-// import PropTypes from "react"
+import PropTypes from "react"
 import React from "react"
 import { useStaticQuery, graphql, StaticQuery } from "gatsby";
 import Sitelogo from '../assets/images/logo.png';
