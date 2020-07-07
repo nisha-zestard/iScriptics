@@ -5,6 +5,7 @@ import { removePre } from './../util/common';
 import Sitelogo from '../assets/images/logo.png';
 import Searchbar from '../assets/images/search.png';
 import Menuback from '../assets/images/menu.png';
+import Hmclosemenu from '../assets/images/close.png';
 
 class Header extends React.Component {
     constructor(){
@@ -50,8 +51,9 @@ class Header extends React.Component {
             //console.log(data);
             const handleClicko = (el) => { 
                 const navbarmenu = document.getElementsByClassName('header-menu')[0];
-                navbarmenu.classList.toggle('show-main-menu');    
+                navbarmenu.classList.toggle('show-main-menu'); 
             }
+            
                
           return(
             <header className="site-header">
@@ -70,15 +72,18 @@ class Header extends React.Component {
                         <div className="header-menu">
                             <ul className="nav navbar-nav navbar-right pos-right">
                                 {headermenu.map((node,hmi) => (
-                                    <li key={hmi}><Link to={`/${removePre(node.url)}`} >{node.title}</Link></li>
-                                    
+                                    <li key={hmi}><Link to={`/${removePre(node.url)}`} >{node.title}</Link></li>                                    
                                 ))}
                             </ul>                            
                             <div className="hbopen-menu" style={{backgroundImage: `url(${Menuback})`}}>
                                 <div className="hm-logo">
                                 <Link to="/" className="hm-logo-link"><img src={Sitelogo} alt="Open menu logo"/> </Link>
                                 </div>
-                                
+                                <div className="hm-close-menu">
+                                    <button className="hamburger-close" onClick={handleClicko} >
+                                        <img src={Hmclosemenu} alt="Hm close menu" />
+                                    </button>                                    
+                                </div>
                                 <div className="hm-menu">
                                     <ul className="hm-menu-list">
                                         <li ><Link to={`/${removePre(mainmenu[0].url)}`} >{mainmenu[0].title}</Link> </li>
@@ -113,8 +118,8 @@ class Header extends React.Component {
 
                     </div>
                 </div> 
-                <div className={"services-menu-list " + btnClass}>
-                    <h1 className="title">{servicesmenu.name}</h1>
+                <div className={"services-menu-list " + btnClass} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+                    <h1 className="title">{servicesmenu.name}</h1>                    
                     <ul className="first-level-menu">
                         {servicesmenu.items.map((node,index) => (
                             <li key={index}><Link to={`/${removePre(node.url)}`}>{node.title}</Link>
