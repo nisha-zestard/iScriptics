@@ -128,31 +128,48 @@ header{
                     width: 100%;
                     transform: translateX(2000px);
                 }
+                .hm-logo{
+                    margin-bottom: 45px;
+                    a{
+                        display: block;
+                        img{
+                            margin: 0;
+                        }
+                    }
+                }
                 .hm-menu{
                     .hm-menu-list{
                         list-style: none;
                         margin: 0;
                         padding: 0;
                         li{
+                            margin-bottom: 20px;
                             a{
-                                font-size: 18px;
-                                color: #003c61;
+                                font-size: 24px;
+                                color: #000;
                                 font-weight: bold;
+                            }
+                            &:nth-last-child(-n+3){
+                                a{
+                                    font-size: 14px;
+                                    color: #686868;
+                                    font-weight: normal;
+                                }
                             }
                         }
                     }
                 }
                 .hm-social-media{
-                    margin-top: 50px;
+                    margin-top: 40px;
                     ul{
                         list-style: none;
                         margin: 0;
                         padding: 0;
                         display: flex;
                         li{
-                            margin-right: 10px;
+                            margin-right: 20px;
                             a{
-                                color: #003c61;
+                                color: #686868;
                             }
                         }
                     }
@@ -224,6 +241,18 @@ header{
                     color: #000;
                     font-weight: bold;
                     width: 340px;
+                    position: relative;
+                    padding-left: 35px;
+                    &:after{
+                        content: "";
+                        width: 23px;
+                        height: 26px;
+                        position: absolute;
+                        left: 0;
+                    }
+                    @media screen and (max-width: 1370px){
+                        width: 280px;
+                    }
                     @media screen and (max-width: 767px){
                         width: 100%;
                     }
@@ -247,6 +276,37 @@ header{
                             font-size: 14px;
                             color: #4b4b4b;
                             font-weight: normal;
+                            &:after{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                &:first-child{
+                    a{
+                        &:after{
+                            background-image: url('../images/feature-of-technology.png');
+                        }
+                    }
+                }
+                &:nth-child(2){
+                    a{
+                        &:after{
+                            background-image: url('../images/innovation.png');
+                        }
+                    }
+                }
+                &:nth-child(3){
+                    a{
+                        &:after{
+                            background-image: url('../images/business-accelerators.png');
+                        }
+                    }
+                }
+                &:last-child{
+                    a{
+                        &:after{
+                            background-image: url('../images/managed-services.png');
                         }
                     }
                 }
