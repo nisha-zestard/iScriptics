@@ -1,4 +1,4 @@
-import PropTypes from "react"
+// import PropTypes from "react"
 import React from "react"
 import { graphql, Link, StaticQuery } from "gatsby";
 import { removePre } from './../util/common';
@@ -7,22 +7,17 @@ import Searchbar from '../assets/images/search.png';
 import Menuback from '../assets/images/menu.png';
 import Hmclosemenu from '../assets/images/close.png';
 
-class Header extends React.Component {
-    // constructor(){
-    //     super();
-    //     this.state = {
-    //         isHovered: false
-    //     };
-    //     this.handleHover = this.handleHover.bind(this);
-    // }
-
-    
-    render () {
-        //const btnClass = this.state.isHovered ? "show-slide-menu" : "";
+class Header extends React.Component {    
+    render () {       
       return (
         <StaticQuery
         query={graphql`
-          query {       
+          query {  
+            site {
+                siteMetadata {
+                  title
+                }
+              }     
             allWordpressMenusMenusItems {
                 edges {
                   node {
@@ -48,33 +43,14 @@ class Header extends React.Component {
             const handleClicko = (el) => { 
                 const navbarmenu = document.getElementsByClassName('header-menu')[0];
                 navbarmenu.classList.toggle('show-main-menu'); 
-            }      
-               
-            var xDirection = "";
-            var yDirection = "";
-            
-            var oldX = 0;
-            var oldY = 0;   
+            }   
             const handleHover = (el) => {
-                
-                console.log(yDirection);
                 const navbarmenu = document.getElementsByClassName('services-menu-list')[0];
-                navbarmenu.classList.add('show-slide-menu');
-                // this.setState(prevState => ({
-                //     isHovered: !prevState.isHovered
-                // }));
+                navbarmenu.classList.add('show-slide-menu');                
             }
             const Closeservicemenu = (el) => {                 
                 const navbarmenu = document.getElementsByClassName('services-menu-list')[0];
-                // if (oldX < el.pageX) {
-                //     navbarmenu.classList.add('show-slide-menu');
-                // }
-                // if (oldY < el.pageY) {
-                //     yDirection = "down";
-                    navbarmenu.classList.remove('show-slide-menu'); 
-                // } 
-                
-                
+                navbarmenu.classList.remove('show-slide-menu'); 
             } 
           return(
             <header className="site-header">
@@ -166,11 +142,11 @@ class Header extends React.Component {
       )
     }
   }
-  Header.propTypes = {
-    siteTitle: PropTypes.string,
-  }
+//   Header.propTypes = {
+//     siteTitle: PropTypes.string,
+//   }
   
-  Header.defaultProps = {
-    siteTitle: ``,
-  }
+//   Header.defaultProps = {
+//     siteTitle: ``,
+//   }
 export default Header

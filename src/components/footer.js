@@ -37,8 +37,7 @@ class Footer extends React.Component {
         `}      
         render={(data) => {
             const footercompany = data.allWordpressMenusMenusItems.nodes[2].items;
-            const footersupport = data.allWordpressMenusMenusItems.nodes[0].items;
-            console.log(data);
+            const footersupport = data.allWordpressMenusMenusItems.nodes[0].items;            
           return(
             <footer className="footer">
 
