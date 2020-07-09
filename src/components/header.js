@@ -8,21 +8,17 @@ import Menuback from '../assets/images/menu.png';
 import Hmclosemenu from '../assets/images/close.png';
 
 class Header extends React.Component {
-    constructor(){
-        super();
-        this.state = {
-            isHovered: false
-        };
-        this.handleHover = this.handleHover.bind(this);
-    }
+    // constructor(){
+    //     super();
+    //     this.state = {
+    //         isHovered: false
+    //     };
+    //     this.handleHover = this.handleHover.bind(this);
+    // }
 
-    handleHover(){
-        this.setState(prevState => ({
-            isHovered: !prevState.isHovered
-        }));
-    }
+    
     render () {
-        const btnClass = this.state.isHovered ? "show-slide-menu" : "";
+        //const btnClass = this.state.isHovered ? "show-slide-menu" : "";
       return (
         <StaticQuery
         query={graphql`
@@ -53,11 +49,33 @@ class Header extends React.Component {
                 const navbarmenu = document.getElementsByClassName('header-menu')[0];
                 navbarmenu.classList.toggle('show-main-menu'); 
             }      
-            const Closeservicemenu = (el) => { 
-                const navbarmenu = document.getElementsByClassName('services-menu-list')[0];
-                navbarmenu.classList.toggle('show-slide-menu'); 
-            }      
                
+            var xDirection = "";
+            var yDirection = "";
+            
+            var oldX = 0;
+            var oldY = 0;   
+            const handleHover = (el) => {
+                
+                console.log(yDirection);
+                const navbarmenu = document.getElementsByClassName('services-menu-list')[0];
+                navbarmenu.classList.add('show-slide-menu');
+                // this.setState(prevState => ({
+                //     isHovered: !prevState.isHovered
+                // }));
+            }
+            const Closeservicemenu = (el) => {                 
+                const navbarmenu = document.getElementsByClassName('services-menu-list')[0];
+                // if (oldX < el.pageX) {
+                //     navbarmenu.classList.add('show-slide-menu');
+                // }
+                // if (oldY < el.pageY) {
+                //     yDirection = "down";
+                    navbarmenu.classList.remove('show-slide-menu'); 
+                // } 
+                
+                
+            } 
           return(
             <header className="site-header">
 
@@ -93,12 +111,12 @@ class Header extends React.Component {
                                 </div>
                                 <div className="hm-menu">
                                     <ul className="hm-menu-list">
-                                        <li ><Link to={`/${removePre(mainmenu[0].url)}`} >{mainmenu[0].title}</Link> </li>
-                                        <li ><a href={`/${removePre(mainmenu[1].url)}`} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>{mainmenu[1].title}</a> </li>
-                                        <li ><Link to={`/${removePre(mainmenu[2].url)}`} >{mainmenu[2].title}</Link> </li>
-                                        <li ><Link to={`/${removePre(mainmenu[3].url)}`} >{mainmenu[3].title}</Link> </li>
-                                        <li ><Link to={`/${removePre(mainmenu[4].url)}`} >{mainmenu[4].title}</Link> </li>
-                                        <li ><Link to={`/${removePre(mainmenu[5].url)}`} >{mainmenu[5].title}</Link> </li>
+                                        <li  ><Link to={`/${removePre(mainmenu[0].url)}`} onMouseEnter={Closeservicemenu} >{mainmenu[0].title}</Link> </li>
+                                        <li ><a href={`/${removePre(mainmenu[1].url)}`} onMouseEnter={handleHover} >{mainmenu[1].title}</a> </li>
+                                        <li ><Link to={`/${removePre(mainmenu[2].url)}`} onMouseEnter={Closeservicemenu}>{mainmenu[2].title}</Link> </li>
+                                        <li ><Link to={`/${removePre(mainmenu[3].url)}`} onMouseEnter={Closeservicemenu}>{mainmenu[3].title}</Link> </li>
+                                        <li ><Link to={`/${removePre(mainmenu[4].url)}`} onMouseEnter={Closeservicemenu}>{mainmenu[4].title}</Link> </li>
+                                        <li ><Link to={`/${removePre(mainmenu[5].url)}`} onMouseEnter={Closeservicemenu}>{mainmenu[5].title}</Link> </li>
                                     </ul>
                                 </div>
                                 <div className="hm-social-media">
@@ -113,7 +131,8 @@ class Header extends React.Component {
                         </div> 
                     </div>
                 </div> 
-                <div className={"services-menu-list " + btnClass} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+                {/* <div className={"services-menu-list " + btnClass}> */}
+                <div className="services-menu-list">
                     <div className="hm-close-menu">
                         <button className="hamburger-close" onClick={Closeservicemenu} >
                             <img src={Hmclosemenu} alt="Hm close menu" />
