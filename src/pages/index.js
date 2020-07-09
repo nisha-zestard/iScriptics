@@ -7,30 +7,30 @@ import { removePre } from './../util/common'
 import ReactFullpage from '@fullpage/react-fullpage';
 
 class Fullpage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          isTop: true
-        };
-        this.onScroll = this.onScroll.bind(this);
-      }
-      componentDidMount() {    
-        document.addEventListener('scroll', () => { 
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //       isTop: true
+    //     };
+    //     this.onScroll = this.onScroll.bind(this);
+    //   }
+    //   componentDidMount() {    
+    //     document.addEventListener('scroll', () => { 
             
-          const stickyhead = document.getElementsByClassName('site-header')[0];  
-          const isTop = window.scrollY ;
+    //       const stickyhead = document.getElementsByClassName('site-header')[0];  
+    //       const isTop = window.scrollY ;
               
-          if (isTop >= 100) { 
-            stickyhead.classList.add('sticky-header'); }
-          else { 
-            stickyhead.classList.remove('sticky-header');
+    //       if (isTop >= 100) { 
+    //         stickyhead.classList.add('sticky-header'); }
+    //       else { 
+    //         stickyhead.classList.remove('sticky-header');
         
-        }
-        });
-      }
-      onScroll(isTop) {         
-            this.setState({ isTop });
-        }
+    //     }
+    //     });
+    //   }
+    //   onScroll(isTop) {         
+    //         this.setState({ isTop });
+    //     }
     render(){
         const data = this.props.data;
         const pagedetail = data.wordpressPage.acf.content_module_page;         
@@ -48,16 +48,9 @@ class Fullpage extends Component {
               navigationTooltips = {['BPO', 'BPO', 'CRM/Erp', 'Gaming', 'Cloud', 'Application Development', 'About us', '']}
               showActiveTooltip = {true}
               slidesNavigation = {true}
-              slidesNavPosition = {'bottom'}
               sectionClassName = {'section'}
-              css3 = {true}
-	            autoScrolling = {true}
-              scrollBar = {true}
               verticalAlign = {false}
-              sectionPaddingTop = {'50px'}
-              sectionPaddingBottom = {'50px'}
-              arrowNavigation = {true}
-        
+              
             render={({ state, fullpageApi }) => {
                 
               return (

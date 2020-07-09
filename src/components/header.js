@@ -7,7 +7,36 @@ import Searchbar from '../assets/images/search.png';
 import Menuback from '../assets/images/menu.png';
 import Hmclosemenu from '../assets/images/close.png';
 
-class Header extends React.Component {    
+class Header extends React.Component {   
+    constructor(props) {
+        super(props);
+        this.state = {
+          isTop: true
+        };
+        this.onScroll = this.onScroll.bind(this);
+      }
+      componentDidMount() {    
+        document.addEventListener('scroll', () => { 
+            
+          const stickyhead = document.getElementsByClassName('site-header')[0];  
+          const isTop = window.scrollY ;
+              
+          if (isTop >= 100) { 
+            stickyhead.classList.add('sticky-header'); 
+            const servicemenu = document.getElementsByClassName('services-menu-list')[0];
+            servicemenu.classList.remove('show-slide-menu');
+            const mainmenu = document.getElementsByClassName('header-menu')[0];
+            mainmenu.classList.remove('show-main-menu'); 
+        }
+          else { 
+            stickyhead.classList.remove('sticky-header');
+        
+        }
+        });
+      }
+      onScroll(isTop) {         
+            this.setState({ isTop });
+        } 
     render () {       
       return (
         <StaticQuery
