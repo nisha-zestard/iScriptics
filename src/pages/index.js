@@ -20,7 +20,7 @@ class Fullpage extends Component {
     //       const stickyhead = document.getElementsByClassName('site-header')[0];  
     //       const isTop = window.scrollY ;
               
-    //       if (isTop >= 100) { 
+    //       if (isTop >= 10) { 
     //         stickyhead.classList.add('sticky-header'); }
     //       else { 
     //         stickyhead.classList.remove('sticky-header');
@@ -31,6 +31,20 @@ class Fullpage extends Component {
     //   onScroll(isTop) {         
     //         this.setState({ isTop });
     //     }
+    onLeave(origin, destination, direction) {
+      if(destination.index > 0){
+      const stickyhead = document.getElementsByClassName('site-header')[0];  
+      stickyhead.classList.add('sticky');
+      }
+      //console.log("Leaving section " + destination.index);
+    }
+    afterLoad(origin, destination, direction) {
+      if(destination.index == 0){
+        const stickyhead = document.getElementsByClassName('site-header')[0];  
+        stickyhead.classList.remove('sticky');
+      }
+      console.log("After load: " + destination.index);
+    }
     render(){
         const data = this.props.data;
         const pagedetail = data.wordpressPage.acf.content_module_page;         
@@ -42,6 +56,8 @@ class Fullpage extends Component {
             menu = {'#menu'}
               lockAnchors = {true}
               anchors = {['', 'BPO', 'CRM/Erp', 'Gaming', 'Cloud', 'Application', 'About', 'Footer']}
+              // onLeave={this.onLeave.bind(this)}
+              // afterLoad={this.afterLoad.bind(this)}
               navigation = {true}
               sectionsColor = {['#003c60', '', '#6230bb', '#f2a81e', '#009bd7', '#e14a4a', '#ffffff']}
               navigationPosition = {'right'}
@@ -50,6 +66,10 @@ class Fullpage extends Component {
               slidesNavigation = {true}
               sectionClassName = {'section'}
               verticalAlign = {false}
+              autoScrolling = {true}
+              //fitToSection = {true}
+              //scrollOverflow={true}
+              scrollBar = {true}
               
             render={({ state, fullpageApi }) => {
                 
