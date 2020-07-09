@@ -120,6 +120,12 @@
             }
         }
     }
+    .fp-section{
+        padding-left: 100px;
+        &#slider-footer{
+            padding-left: 0;
+        }
+    }
 }
 .slick-dots{
     transform: translateY(-50%);
@@ -166,7 +172,7 @@ body{
             left: 17px;
             ul{
                 li{
-                    width: 200px;
+                    width: 150px;
                     height: 50px;
                     a{
                         display: inline-block;
@@ -190,6 +196,12 @@ body{
                         right: inherit;
                         left: 40px;
                         top: 30px;
+                        font-family: "Khand", sans-serif;
+                        max-width: 100px;
+                        white-space: inherit;
+                    }
+                    &:last-child{
+                        display: none;
                     }
                 }
             }
@@ -208,12 +220,14 @@ body{
                         .fp-tooltip{
                             color: #000;
                         }
-                        &:last-child{
-                            display: none;
-                        }
                     }
                 }
             }
+        }
+    }
+    &.fp-viewing-Footer{
+        #fp-nav{
+            display: none;
         }
     }
 }

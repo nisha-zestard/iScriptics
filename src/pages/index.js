@@ -41,7 +41,7 @@ class Fullpage extends Component {
             scrollingSpeed = {700}
             menu = {'#menu'}
               lockAnchors = {true}
-              anchors = {['', 'BPO', 'CRM/Erp', 'Gaming', 'Cloud', 'Application', 'About', '']}
+              anchors = {['', 'BPO', 'CRM/Erp', 'Gaming', 'Cloud', 'Application', 'About', 'Footer']}
               navigation = {true}
               sectionsColor = {['#003c60', '', '#6230bb', '#f2a81e', '#009bd7', '#e14a4a', '#ffffff']}
               navigationPosition = {'right'}
