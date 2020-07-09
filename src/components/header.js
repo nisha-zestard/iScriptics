@@ -15,21 +15,23 @@ class Header extends React.Component {
         };
         this.onScroll = this.onScroll.bind(this);
       }
-      componentDidMount() {    
+      componentDidMount() {         
+
         document.addEventListener('scroll', () => { 
             
           const stickyhead = document.getElementsByClassName('site-header')[0];  
           const isTop = window.scrollY ;
               
           if (isTop >= 100) { 
-            stickyhead.classList.add('sticky-header'); 
+            stickyhead.classList.add('sticky'); 
             const servicemenu = document.getElementsByClassName('services-menu-list')[0];
+            //console.log(servicemenu);
             servicemenu.classList.remove('show-slide-menu');
             const mainmenu = document.getElementsByClassName('header-menu')[0];
             mainmenu.classList.remove('show-main-menu'); 
         }
           else { 
-            stickyhead.classList.remove('sticky-header');
+            stickyhead.classList.remove('sticky');
         
         }
         });
