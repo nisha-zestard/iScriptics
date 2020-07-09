@@ -39,7 +39,7 @@ class Fullpage extends Component {
       //console.log("Leaving section " + destination.index);
     }
     afterLoad(origin, destination, direction) {
-      if(destination.index == 0){
+      if(destination.index === 0){
         const stickyhead = document.getElementsByClassName('site-header')[0];  
         stickyhead.classList.remove('sticky');
       }
@@ -205,8 +205,11 @@ class Fullpage extends Component {
                                 <div className="content left">
                                 <h1 className="h2-heading mb-xs-10" dangerouslySetInnerHTML={{ __html: pagedetail[6].cwi_title }} />
                                 <p className="text-medium" dangerouslySetInnerHTML={{ __html: pagedetail[6].cwi_sub_title }} />
-                                <p className="text-small" dangerouslySetInnerHTML={{ __html: pagedetail[6].cwi_content }} />
-                                <Link to={`/${removePre(pagedetail[6].cwi_button_link)}`} className="btn-primary">{pagedetail[4].cwi_button_text}</Link>
+                                {pagedetail[6].cwi_content !== null &&
+                                  <p className="text-small" dangerouslySetInnerHTML={{ __html: pagedetail[6].cwi_content }} />
+                                }
+                                
+                                <Link to={`/${removePre(pagedetail[6].cwi_button_link)}`} className="btn-primary">{pagedetail[6].cwi_button_text}</Link>
                                 </div>
                             </div>
                             <div className="col-md-6 col-xs-12">
