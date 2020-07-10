@@ -232,9 +232,9 @@ body{
           &.fp-right{
               ul{
                   li{
-                      &:nth-last-child(4n){
+                    //   &:nth-last-child(4n){
                           display: none;
-                      }
+                    //   }
                   }
               }
           }

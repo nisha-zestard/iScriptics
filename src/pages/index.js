@@ -206,7 +206,7 @@ class Fullpage extends Component {
                                 <h1 className="h2-heading mb-xs-10" dangerouslySetInnerHTML={{ __html: pagedetail[6].cwi_title }} />
                                 <p className="text-medium" dangerouslySetInnerHTML={{ __html: pagedetail[6].cwi_sub_title }} />
                                 {pagedetail[6].cwi_content !== null &&
-                                  <p className="text-small" dangerouslySetInnerHTML={{ __html: pagedetail[6].cwi_content }} />
+                                  <div className="text-small" dangerouslySetInnerHTML={{ __html: pagedetail[6].cwi_content }} />
                                 }
                                 
                                 <Link to={`/${removePre(pagedetail[6].cwi_button_link)}`} className="btn-primary">{pagedetail[6].cwi_button_text}</Link>
