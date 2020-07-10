@@ -25,6 +25,7 @@
     }
     .gaming-section{
         background: #f2a81e;
+
     }
     .hybride-cloud-section{
         background: #009bd7;
@@ -105,7 +106,7 @@
     }
     .fp-section{
         padding-left: 170px;
-        @media screen and (max-width: 990px){
+        @media screen and (max-width: 1024px){
             padding: 100px 0;
             height: auto !important;
             @media screen and (max-width: 767px){
@@ -113,7 +114,7 @@
             }
         }
         .fp-tableCell{
-            @media screen and (max-width: 990px){
+            @media screen and (max-width: 1024px){
                 height: auto !important;
             }
             .image-left{
@@ -130,15 +131,24 @@
         }
         &#slider-footer{
             padding-left: 0;
-            @media screen and (max-width: 990px){
+            @media screen and (max-width: 1024px){
                 padding: 0;
             }
-        }
+        } 
         &#first-slide{
-            @media screen and (max-width: 990px){
+            @media screen and (max-width: 1024px){
                 padding-top: 150px;
                 @media screen and (max-width: 575px){
                     padding-top: 100px;
+                }
+            }
+        }
+        &#slide-gaming{
+            .image-left{
+                img{
+                    @media screen and (max-width: 575px){
+                        height: 400px;
+                    }
                 }
             }
         }
