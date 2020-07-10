@@ -2,6 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import { removePre } from './../util/common';
 import { graphql, Link, StaticQuery } from "gatsby";
+import ScroolTop from './scrolltop'
 
 class Footer extends React.Component {    
     render () {      
@@ -101,7 +102,9 @@ class Footer extends React.Component {
                             <div className="copyright">
                                 <p dangerouslySetInnerHTML={{ __html: acf.copy_right }} />
                             </div>
+                            <ScroolTop />
                         </footer>
+                        
                     )  
                 }}
             />
