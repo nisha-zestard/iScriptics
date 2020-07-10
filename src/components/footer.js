@@ -46,7 +46,7 @@ class Footer extends React.Component {
                                 <article>
                                     <div className="container">
                                         <div className="row">
-                                            <div className="col-md-3 col-sm-6">
+                                            <div className="col-md-3 col-sm-6 ">
                                                 <div className="footer-col">
                                                     <div className="footer-logo">
                                                         {acf.logo.source_url !== null &&
@@ -63,7 +63,7 @@ class Footer extends React.Component {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="col-md-3 col-dm-6">
+                                            <div className="col-md-3 col-sm-6 ">
                                                 <div className="footer-col">
                                                     <h2 className="footer-title">Company</h2>
                                                     <ul className="footer-links">
@@ -73,7 +73,7 @@ class Footer extends React.Component {
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div className="col-md-3 col-dm-6">
+                                            <div className="col-md-3 col-sm-6 ">
                                                 <div className="footer-col">
                                                     <h2 className="footer-title">Support</h2>
                                                     <ul className="footer-links">
@@ -83,7 +83,7 @@ class Footer extends React.Component {
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div className="col-md-3 col-dm-6">
+                                            <div className="col-md-3 col-sm-6 ">
                                                 <div className="footer-col">
                                                     <div className="subscribe-form-wraper">
                                                         <h5>Stay up to date on the latest from iScriptics</h5>

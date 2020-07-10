@@ -93,8 +93,8 @@ class Header extends React.Component {
             return(
               <header className="site-header">
                 <div className="container">
-                  <nav className="navbar" id="head-nav">
-                    <div className="container mt45">
+                  <nav className="navbar p-0" id="head-nav">
+                    <div className="container mt45 p-0">
                       <div className="row align-items-center w-100">
                         <div className="col-md-3">
                           <div className="navbar-header">
@@ -114,8 +114,8 @@ class Header extends React.Component {
                             </ul> 
                             <div className="header-right">
                               <div className="search-bar">
-                                <img src={Searchbar} alt="Header searchbar"/> 
-                                <img src={DarkSearchbar} alt="Dark searchbar"/> 
+                                <img src={Searchbar} alt="Header searchbar"className="white-icon"/> 
+                                <img src={DarkSearchbar} alt="Dark searchbar" className="dark-icon"/> 
                               </div> 
                               <button className="hamburger-menu" onClick={handleClicko}>
                                 <div className="bar1"></div>

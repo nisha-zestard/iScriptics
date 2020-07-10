@@ -69,12 +69,25 @@
         margin-right: 25px;
         @media screen and (max-width: 1370px){
             margin-right: 80px;
+            @media screen and (max-width: 991px){
+                margin-right: 0;
+            }
         }
-    }
-    .search-bar{
-        margin-right: 25px;
-        img{
-            margin: 0;
+        .search-bar{
+            margin-right: 25px;
+            img{
+                margin: 0;
+            }
+        }
+        &.show-main-menu{
+            .search-bar{
+                .white-icon{
+                    display: none;
+                }
+                .dark-icon{
+                    display: inline-block;
+                }
+            }
         }
     }
     .hamburger-menu{
@@ -91,7 +104,10 @@ header{
         left: 0;
         z-index: 999;
         width: 100%;
-        padding-top: 10px;
+        padding-top: 35px;
+        @media screen and (max-width: 575px){
+            padding-top: 20px;
+        }
         &.sticky-header{
             position: sticky;
             width: 100%;
@@ -106,6 +122,9 @@ header{
         .header-menu{
             .navbar-nav {
                 flex-direction: row;
+                @media screen and (max-width: 991px){
+                    display: none;
+                }
                 li{
                     margin: 0 10px;
                     a{
@@ -207,6 +226,10 @@ header{
             position: absolute;
             right: 15px;
             top: 20px;
+            display: none;
+            @media screen and (max-width: 991px){
+                display: inline-block;
+            }
             .hamburger-close{
                 background: transparent;
                 border: 0;
@@ -329,8 +352,12 @@ header{
     width: 100px;
     display: flex;
     align-items: center;
-    top: 16px;
+    top: 30px;
     z-index: 9999;
+    @media screen and (max-width: 575px){
+        right: 15px;
+        top: 15px;
+    }
 }
 @keyframes fadeInLeftBig{
 	0%{
@@ -345,4 +372,29 @@ header{
 	-ms-transform:translateX(0);
 	transform:translateX(0)
 	}
+}
+.fp-viewing-{
+    .header-right{
+        .search-bar{
+            img{
+                &.dark-icon{
+                    display: none;
+                }
+            }
+        }
+    }
+    &.fp-viewing-About{
+        .header-right{
+            .search-bar{
+                img{
+                    &.dark-icon{
+                        display: inline-block;
+                    }
+                    &.white-icon{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }

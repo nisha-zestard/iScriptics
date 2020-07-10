@@ -33,7 +33,7 @@ class Fullpage extends Component {
           render={({ state, fullpageApi }) => {              
             return (                
               <ReactFullpage.Wrapper>
-                <div className="section">
+                <div className="section" id="first-slide">
                   <article className="container">
                     <div className="row">
                       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -77,6 +77,11 @@ class Fullpage extends Component {
                       <div className="col-md-6 col-xs-12">
                         <h1 className="h2-heading mb-xs-10" dangerouslySetInnerHTML={{ __html: pagedetail[2].cwi_title }} />
                         <p className="text-medium" dangerouslySetInnerHTML={{ __html: pagedetail[2].cwi_sub_title }} />
+                        <div className="image-left">
+                          {pagedetail[2].cwi_image !== null &&
+                              <img src={pagedetail[2].cwi_image.source_url} alt="Section right"/>
+                            }
+                        </div>
                         <Link to={`/${removePre(pagedetail[2].cwi_button_link)}`} className="btn-primary">{pagedetail[2].cwi_button_text}</Link>
                       </div>
                       <div className="col-md-6 col-xs-12">
@@ -103,6 +108,11 @@ class Fullpage extends Component {
                         <div className="content right">
                           <h1 className="h2-heading mb-xs-10" dangerouslySetInnerHTML={{ __html: pagedetail[3].cwi_title }} />
                           <p className="text-medium" dangerouslySetInnerHTML={{ __html: pagedetail[3].cwi_sub_title }} />
+                          <div className="image-left">
+                            {pagedetail[3].cwi_image !== null &&
+                              <img src={pagedetail[3].cwi_image.source_url} alt="Section left"/>
+                            }
+                          </div>
                           <Link to={`/${removePre(pagedetail[3].cwi_button_link)}`} className="btn-primary">{pagedetail[3].cwi_button_text}</Link>
                         </div>
                       </div>
@@ -116,6 +126,11 @@ class Fullpage extends Component {
                         <div className="content left">
                           <h1 className="h2-heading mb-xs-10" dangerouslySetInnerHTML={{ __html: pagedetail[4].cwi_title }} />
                           <p className="text-medium" dangerouslySetInnerHTML={{ __html: pagedetail[4].cwi_sub_title }} />
+                          <div className="image-left">
+                            {pagedetail[4].cwi_image !== null &&
+                              <img src={pagedetail[4].cwi_image.source_url} alt="Section right"/>
+                            }
+                          </div>
                           <Link to={`/${removePre(pagedetail[4].cwi_button_link)}`} className="btn-primary">{pagedetail[4].cwi_button_text}</Link>
                         </div>
                       </div>
@@ -143,6 +158,11 @@ class Fullpage extends Component {
                         <div className="content right">
                           <h1 className="h2-heading mb-xs-10" dangerouslySetInnerHTML={{ __html: pagedetail[5].cwi_title }} />
                           <p className="text-medium" dangerouslySetInnerHTML={{ __html: pagedetail[5].cwi_sub_title }} />
+                          <div className="image-left">
+                            {pagedetail[5].cwi_image !== null &&
+                              <img src={pagedetail[5].cwi_image.source_url} alt="Section left"/>
+                            }
+                          </div>
                           <Link to={`/${removePre(pagedetail[5].cwi_button_link)}`} className="btn-primary">{pagedetail[4].cwi_button_text}</Link>
                         </div>
                       </div>
@@ -156,6 +176,11 @@ class Fullpage extends Component {
                         <div className="content left">
                           <h1 className="h2-heading mb-xs-10" dangerouslySetInnerHTML={{ __html: pagedetail[6].cwi_title }} />
                           <p className="text-medium" dangerouslySetInnerHTML={{ __html: pagedetail[6].cwi_sub_title }} />
+                          <div className="image-left">
+                            {pagedetail[6].cwi_image !== null &&
+                              <img src={pagedetail[6].cwi_image.source_url} alt="Section left"/>
+                            }
+                          </div>
                           {pagedetail[6].cwi_content !== null &&
                             <div className="text-small" dangerouslySetInnerHTML={{ __html: pagedetail[6].cwi_content }} />
                           }                              

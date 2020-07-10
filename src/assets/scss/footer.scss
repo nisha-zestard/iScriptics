@@ -4,6 +4,9 @@ footer{
         padding: 45px 0;
         background: #003c61;
         .footer-col{
+            @media screen and (max-width: 767px){
+                margin-bottom: 20px;
+            }
             .footer-logo{
                 margin-bottom: 30px;
             }
@@ -43,6 +46,9 @@ footer{
                 list-style: none;
                 li{
                     margin-bottom: 10px;
+                    @media screen and (max-width: 420px){
+                        margin-bottom: 4px;
+                    }
                     a{
                         font-size: 14px;
                         font-family: $open-sans-font;
