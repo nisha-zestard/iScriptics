@@ -410,3 +410,28 @@ header{
         }
     }
 }
+.scroll-to-top{
+    display: block;
+    position: fixed;
+    bottom: 10px; 
+    right: 25px;
+    transition: all 0.5s;
+    div{
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        //box-shadow: rgba(2, 6, 16, 0.2) 0px 4px 24px;
+        //background: rgb(35, 61, 124);
+        display: block;
+        text-align: center;
+        line-height: 60px;
+        font-size: 35px;
+        cursor: pointer;
+        transition: all 0.5s;
+        svg{
+            rect{
+                fill: transparent;
+            }
+        }
+    }
+}

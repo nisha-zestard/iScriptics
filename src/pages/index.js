@@ -27,7 +27,7 @@ class Fullpage extends Component {
           sectionClassName = {'section'}
           verticalAlign = {false}
           autoScrolling = {true}
-          scrollBar = {true} 
+          scrollBar = {true}
           responsiveWidth = {1025}
           
           render={({ state, fullpageApi }) => {              
