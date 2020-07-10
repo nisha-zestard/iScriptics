@@ -1,5 +1,10 @@
 .container {
-    max-width: 100%;
+        @media screen and (min-width: 768px){
+            max-width: 750px;
+        }
+        @media screen and (min-width: 991px){
+            max-width: 100%;
+        }
 }
 #BPOsec {
     background-image: url("http://phptasks.com/iscriptics/wp-content/uploads/2020/06/slider-03-min.jpg");

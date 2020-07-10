@@ -32,29 +32,6 @@
     .data-security-section{
         background: #e14a4a;
     }
-    .about-company-section{
-        padding: 100px 0;
-        .content{
-            .h2-heading{
-                color: #000000;
-            }
-            .text-medium{
-                color: #404040;
-                margin-bottom: 50px;
-            }
-            .text-small{
-                font-size: 16px;
-                line-height: 28px;
-                color: #8a8a8a;
-                font-family: $open-sans-font;
-                margin-bottom: 50px;
-            }
-            .btn-primary{
-                background: #003c61;
-                color: #fff;
-            }
-        }
-    }
 }
 .Home-top-wraper{
     .slick-slider{
@@ -103,7 +80,6 @@
     #slide-aboutus{
         .content{
             .h2-heading {
-                font-size: 70px;
                 font-weight: 600;
                 color: #000;
                 font-family: $primary-font;
@@ -112,20 +88,61 @@
             .text-medium{
                 color: #404040;
                 font-size: 20px;
+                @media screen and (max-width: 575px){
+                    font-size: 17px;
+                }
             }
             .text-small{
                 font-size: 16px;
                 color: #8a8a8a;
                 line-height: 28px;
             }
+            .btn-primary{
+                background-color: #003c61;
+                color: #fff;
+            }
         }
     }
     .fp-section{
         padding-left: 170px;
+        @media screen and (max-width: 990px){
+            padding: 100px 0;
+            height: auto !important;
+            @media screen and (max-width: 767px){
+                padding: 80px 0;
+            }
+        }
+        .fp-tableCell{
+            @media screen and (max-width: 990px){
+                height: auto !important;
+            }
+            .image-left{
+                display: none;
+                @media screen and (max-width: 991px){
+                    display: block;
+                }
+            }
+            .image-wrap{
+                @media screen and (max-width: 991px){
+                    display: none;
+                }
+            }
+        }
         &#slider-footer{
             padding-left: 0;
+            @media screen and (max-width: 990px){
+                padding: 0;
+            }
         }
-    } 
+        &#first-slide{
+            @media screen and (max-width: 990px){
+                padding-top: 150px;
+                @media screen and (max-width: 575px){
+                    padding-top: 100px;
+                }
+            }
+        }
+    }  
 }
 .slick-dots{
     transform: translateY(-50%);
