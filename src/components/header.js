@@ -4,6 +4,7 @@ import { graphql, Link, StaticQuery } from "gatsby";
 import { removePre } from './../util/common';
 import Sitelogo from '../assets/images/logo.png';
 import Searchbar from '../assets/images/search.png';
+import DarkSearchbar from '../assets/images/dark-search.png';
 import Menuback from '../assets/images/menu.png';
 import Hmclosemenu from '../assets/images/close.png';
 
@@ -105,6 +106,7 @@ class Header extends React.Component {
                             <div className="header-right">
                             <div className="search-bar">
                                 <img src={Searchbar} alt="Header searchbar"/> 
+                                <img src={DarkSearchbar} alt="Dark searchbar"/> 
                             </div> 
                             <button className="hamburger-menu" onClick={handleClicko}>
                                 <div className="bar1"></div>

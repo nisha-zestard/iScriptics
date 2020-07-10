@@ -67,9 +67,10 @@ class Fullpage extends Component {
               sectionClassName = {'section'}
               verticalAlign = {false}
               autoScrolling = {true}
-              //fitToSection = {true}
+              // fitToSection = {true}
               //scrollOverflow={true}
               scrollBar = {true}
+              responsiveWidth = {991}
               
             render={({ state, fullpageApi }) => {
                 
