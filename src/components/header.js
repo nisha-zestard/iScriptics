@@ -81,6 +81,8 @@ class Header extends React.Component {
             const handleClicko = (el) => { 
               const navbarmenu = document.getElementsByClassName('header-menu')[0];
               navbarmenu.classList.toggle('show-main-menu'); 
+              const servicemenu = document.getElementsByClassName('services-menu-list')[0];
+              servicemenu.classList.remove('show-slide-menu'); 
             }   
             const handleHover = (el) => {
               const navbarmenu = document.getElementsByClassName('services-menu-list')[0];
@@ -89,6 +91,7 @@ class Header extends React.Component {
             const Closeservicemenu = (el) => {                 
               const navbarmenu = document.getElementsByClassName('services-menu-list')[0];
               navbarmenu.classList.remove('show-slide-menu'); 
+              
             } 
             return(
               <header className="site-header">
