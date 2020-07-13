@@ -21,7 +21,7 @@ class Fullpage extends Component {
           navigation = {true}
           sectionsColor = {['#003c60', '', '#6230bb', '#f2a81e', '#009bd7', '#e14a4a', '#ffffff']}
           navigationPosition = {'right'}
-          navigationTooltips = {['BPO', 'BPO', 'CRM/Erp', 'Gaming', 'Cloud', 'Application Development', 'About us', '']}
+          navigationTooltips = {['Navigate your next', 'BPO', 'CRM/Erp', 'Gaming', 'Cloud', 'Application Development', 'About us', '']}
           showActiveTooltip = {true}
           slidesNavigation = {true}
           sectionClassName = {'section'}
