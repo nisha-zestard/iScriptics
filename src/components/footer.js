@@ -9,38 +9,43 @@ class Footer extends React.Component {
         return (
             <StaticQuery
                 query={graphql`
-                    query {       
-                        allWordpressMenusMenusItems {
-                            nodes {
+                    query {  
+                        wpgraphql {
+                            menus {
+                              nodes {
                                 name
-                                items {
-                                    title
-                                    url
-                                }
-                            }
-                        }
-                        allWordpressAcfOptions {
-                            edges {
-                                node {
-                                    options {
-                                        logo {
-                                            source_url
-                                        }
-                                        copy_right
-                                        social_media {
-                                            fsm_icon_class
-                                            fsm_link
-                                        }
+                                slug
+                                menuItems {
+                                  edges {
+                                    node {
+                                      label
+                                      url
                                     }
+                                  }
                                 }
+                              }
+                            }
+                            themeGeneralSettings {
+                                commonThemeSetting {
+                                    logo {
+                                      sourceUrl
+                                    }
+                                  }
+                              footerThemeSetting {
+                                copyRight
+                                socialMedia {
+                                  fsmIconClass
+                                  fsmLink
+                                }
+                              }
                             }
                         }
                     }
                 `}      
-                render={(data) => {
-                    const footercompany = data.allWordpressMenusMenusItems.nodes[2].items;
-                    const footersupport = data.allWordpressMenusMenusItems.nodes[0].items; 
-                    const acf = data.allWordpressAcfOptions.edges[0].node.options;           
+                render={(data) => {                   
+                    const foothemeset = data.wpgraphql.themeGeneralSettings
+                    const foosuppmenu = data.wpgraphql.menus.nodes[0].menuItems.edges
+                    const foomainmenu = data.wpgraphql.menus.nodes[2].menuItems.edges                   
                     return(
                         <footer className="footer">
                             <div className="footer-wrap">      
@@ -50,15 +55,15 @@ class Footer extends React.Component {
                                             <div className="col-md-3 col-sm-6 ">
                                                 <div className="footer-col">
                                                     <div className="footer-logo">
-                                                        {acf.logo.source_url !== null &&
-                                                            <img src={acf.logo.source_url} alt="Footer logo"/> 
+                                                        {foothemeset.commonThemeSetting.logo.sourceUrl !== null &&
+                                                            <img src={foothemeset.commonThemeSetting.logo.sourceUrl} alt="Footer logo"/> 
                                                         } 
                                                     </div>
                                                     <div className="footer-socials">
                                                         <h5>Connect with us</h5>
                                                         <ul>
-                                                            {acf.social_media.map((smnode,smindex) => (
-                                                                <li key={smindex}><Link to={`/${removePre(smnode.fsm_link)}`}><i className={smnode.fsm_icon_class}></i></Link></li>
+                                                            {foothemeset.footerThemeSetting.socialMedia.map((smnode,smindex) => (
+                                                                <li key={smindex}><Link to={`/${removePre(smnode.fsmLink)}`}><i className={smnode.fsmIconClass}></i></Link></li>
                                                             ))}
                                                         </ul>
                                                     </div>
@@ -68,8 +73,8 @@ class Footer extends React.Component {
                                                 <div className="footer-col">
                                                     <h2 className="footer-title">Company</h2>
                                                     <ul className="footer-links">
-                                                        {footercompany.map((node,index) => (
-                                                            <li key={index}><Link to={`/${removePre(node.url)}`}>{node.title}</Link></li>
+                                                        {foomainmenu.map((node,index) => (
+                                                            <li key={index}><Link to={`/${removePre(node.node.url)}`}>{node.node.label}</Link></li>
                                                         ))}
                                                     </ul>
                                                 </div>
@@ -78,8 +83,8 @@ class Footer extends React.Component {
                                                 <div className="footer-col">
                                                     <h2 className="footer-title">Support</h2>
                                                     <ul className="footer-links">
-                                                        {footersupport.map((node,index) => (
-                                                            <li key={index}><Link to={`/${removePre(node.url)}`}>{node.title}</Link></li>
+                                                        {foosuppmenu.map((node,index) => (
+                                                            <li key={index}><Link to={`/${removePre(node.node.url)}`}>{node.node.label}</Link></li>
                                                         ))}
                                                     </ul>
                                                 </div>
@@ -100,7 +105,7 @@ class Footer extends React.Component {
                                 </article>
                             </div>
                             <div className="copyright">
-                                <p dangerouslySetInnerHTML={{ __html: acf.copy_right }} />
+                                <p dangerouslySetInnerHTML={{ __html: foothemeset.footerThemeSetting.copyRight }} />
                             </div>
                             <ScroolTop />
                         </footer>

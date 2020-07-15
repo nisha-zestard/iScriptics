@@ -32,27 +32,34 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    // {
+    //   resolve: "gatsby-source-wordpress",
+    //   options: {        
+    //     baseUrl: "http://phptasks.com/iscriptics",
+    //     hostingWPCOM: false,
+    //     auth: {
+    //       wpcom_user: "admin",
+    //       wpcom_pass: '#8SHlvNk%(p8N)LVkX',
+    //     },
+    //     useACF: true,
+    //     perPage: 100,
+    //     concurrentRequests: 10,
+    //     keepMediaSizes: false,
+    //     normalizer: function ({ entities }) {
+    //       return entities
+    //     },
+    //   }
+    // },
     {
-      resolve: "gatsby-source-wordpress",
+      resolve: "gatsby-source-graphql",
       options: {
-        /*
-         * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
-         * Example : 'gatsbyjsexamplewordpress.wordpress.com' or 'www.example-site.com'
-         */
-        baseUrl: "http://phptasks.com/iscriptics",
-        hostingWPCOM: false,
-        auth: {
-          wpcom_user: "admin",
-          wpcom_pass: '#8SHlvNk%(p8N)LVkX',
-        },
-        useACF: true,
-        perPage: 100,
-        concurrentRequests: 10,
-        keepMediaSizes: false,
-        normalizer: function ({ entities }) {
-          return entities
-        },
-      }
+        // Remote schema query type. This is an arbitrary name.
+        typeName: "WPGraphQL",
+        // Field name under which it will be available. Used in your Gatsby query. This is also an arbitrary name.
+        fieldName: "wpgraphql",
+        // GraphQL endpoint, relative to your WordPress home URL.
+        url: "http://phptasks.com/iscriptics/graphql",
+      },
     },
     {
         resolve: 'gatsby-plugin-mailchimp',
