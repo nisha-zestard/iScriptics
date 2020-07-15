@@ -40,31 +40,38 @@ class Header extends React.Component {
       <StaticQuery
         query={graphql`
           query {  
-            allWordpressAcfOptions {
-              edges {
-                node {
-                  options {
-                    logo {
-                      source_url
-                    }
-                    social_media {
-                      fsm_icon_class
-                      fsm_link
-                    }
+            wpgraphql {
+              themeGeneralSettings {
+                commonThemeSetting {
+                  logo {
+                    sourceUrl
+                  }
+                }
+                footerThemeSetting {
+                  socialMedia {
+                    fsmIconClass
+                    fsmLink
                   }
                 }
               }
-            }     
-            allWordpressMenusMenusItems {
-              edges {
-                node {
+              menus {
+                nodes {
                   name
-                  items {
-                    title
-                    url
-                    child_items {
-                      title
-                      url
+                  slug
+                  menuItems(where: {parentDatabaseId: 0}) {
+                    edges {
+                      node {
+                        label
+                        url
+                        childItems {
+                          edges {
+                            node {
+                              label
+                              url
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }
@@ -73,10 +80,11 @@ class Header extends React.Component {
           }
         `}      
           render={(data) => {
-            const headermenu = data.allWordpressMenusMenusItems.edges[1].node.items;
-            const mainmenu = data.allWordpressMenusMenusItems.edges[2].node.items;
-            const servicesmenu = data.allWordpressMenusMenusItems.edges[3].node;
-            const acf = data.allWordpressAcfOptions.edges[0].node.options;
+            const headermenu = data.wpgraphql.menus.nodes[1].menuItems.edges
+            const mainmenu = data.wpgraphql.menus.nodes[2].menuItems.edges
+            const servicemenu = data.wpgraphql.menus.nodes[3].menuItems.edges
+            const themesetting = data.wpgraphql.themeGeneralSettings
+            console.log(servicemenu);
             
             const handleClicko = (el) => { 
               const navbarmenu = document.getElementsByClassName('header-menu')[0];
@@ -102,8 +110,8 @@ class Header extends React.Component {
                         <div className="col-md-3">
                           <div className="navbar-header">
                             <Link to="/">
-                              {acf.logo.source_url !== null &&
-                                <img src={acf.logo.source_url} alt="Main logo"/> 
+                              {themesetting.commonThemeSetting.logo.sourceUrl !== null &&
+                                <img src={themesetting.commonThemeSetting.logo.sourceUrl} alt="Main logo"/> 
                               }                      
                             </Link>
                           </div>
@@ -112,7 +120,7 @@ class Header extends React.Component {
                           <div className="header-menu">
                             <ul className="nav navbar-nav navbar-right pos-right">
                               {headermenu.map((node,hmi) => (
-                                <li key={hmi}><Link to={`/${removePre(node.url)}`} >{node.title}</Link></li>                                    
+                                <li key={hmi}><Link to={`/${removePre(node.node.url)}`} >{node.node.label}</Link></li>                                    
                               ))}
                             </ul> 
                             <div className="header-right">
@@ -134,15 +142,15 @@ class Header extends React.Component {
                                 <ul className="hm-menu-list">
                                   {mainmenu.map((node,mindex) => (
                                     <li key={mindex}>
-                                      {mindex === 1 ? <Link to={`/${removePre(node.url)}`} onMouseEnter={handleHover}>{node.title}</Link> : <Link to={`/${removePre(node.url)}`} onMouseEnter={Closeservicemenu}>{node.title}</Link>}
+                                      {mindex === 1 ? <Link to={`/${removePre(node.node.url)}`} onMouseEnter={handleHover}>{node.node.label}</Link> : <Link to={`/${removePre(node.node.url)}`} onMouseEnter={Closeservicemenu}>{node.node.label}</Link>}
                                     </li> 
                                   ))}                                    
                                 </ul>                                    
                               </div>
                               <div className="hm-social-media">
                                 <ul>
-                                  {acf.social_media.map((smnode,smindex) => (
-                                    <li key={smindex}><Link to={`/${removePre(smnode.fsm_link)}`}><i className={smnode.fsm_icon_class}></i></Link></li>
+                                  {themesetting.footerThemeSetting.socialMedia.map((smnode,smindex) => (
+                                    <li key={smindex}><Link to={`/${removePre(smnode.fsmLink)}`}><i className={smnode.fsmIconClass}></i></Link></li>
                                   ))}
                                 </ul>
                               </div>
@@ -156,14 +164,14 @@ class Header extends React.Component {
                             <img src={Hmclosemenu} alt="Hm close menu" />
                           </button>                                    
                         </div>
-                        <h1 className="title">{servicesmenu.name}</h1>
+                        <h1 className="title">{servicemenu.name}</h1>
                         <ul className="first-level-menu">
-                          {servicesmenu.items.map((node,index) => (
-                            <li key={index}><Link to={`/${removePre(node.url)}`}>{node.title}</Link>
-                              {node.child_items !== null &&
+                          {servicemenu.map((node,index) => (
+                            <li key={index}><Link to={`/${removePre(node.node.url)}`}>{node.node.label}</Link>
+                              {node.childItems !== null &&
                                 <ul className="second-level-menu">
-                                  {node.child_items.map((subnode, ssmi) => (
-                                    <li key={ssmi}><Link to={`/${removePre(subnode.url)}`}>{subnode.title}</Link></li>
+                                  {node.node.childItems.edges.map((subnode, ssmi) => (
+                                    <li key={ssmi}><Link to={`/${removePre(subnode.node.url)}`}>{subnode.node.label}</Link></li>
                                   ))}
                                 </ul>
                               }
